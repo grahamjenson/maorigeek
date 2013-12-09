@@ -4,7 +4,7 @@ GhostTrain::GhostController.class_eval do
   protected
 
   def get_uploader
-    GhostTrain::GhostImageUploader.new
+    GhostUploader.new
   end
 
   def get_posts
@@ -12,11 +12,11 @@ GhostTrain::GhostController.class_eval do
   end
 
   def get_tags
-    [FactoryGirl.build(:ghost_tag)]
+    ActsAsTaggableOn::Tag.all.map{ |t| TagSerializer.new t}.to_json
   end
 
   def get_post(id)
-    FactoryGirl.build(:ghost_post, :id => id)
+    GhostPostSerializer.new  Post.find(id)
   end
 
   def update_post(params)
@@ -24,11 +24,16 @@ GhostTrain::GhostController.class_eval do
   end
 
   def create_post(params)
+    params[:state] = params[:status]
+    params.delete(:status)
+    Post.create(params)
+    {"status"=>"draft", "tags"=>nil, "title"=>"asd", "markdown"=>"asdsad\n\nasd\n"}
+
     FactoryGirl.build(:ghost_post)
   end
-
 
   def munge_post(post)
 
   end
+  
 end

@@ -9,7 +9,6 @@ class CreatePost < ActiveRecord::Migration
       t.integer :user_id
 
       t.text :markdown
-      t.text :html
 
       t.datetime :published_at
       t.timestamps
