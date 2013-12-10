@@ -17,13 +17,12 @@ ActiveRecord::Schema.define(version: 20131208072344) do
   enable_extension "plpgsql"
 
   create_table "posts", force: true do |t|
-    t.string   "uuid",         null: false
-    t.string   "state"
-    t.string   "title",        null: false
+    t.string   "uuid",                           null: false
+    t.string   "state",        default: "draft"
+    t.string   "title",                          null: false
     t.string   "slug"
     t.integer  "user_id"
     t.text     "markdown"
-    t.text     "html"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
