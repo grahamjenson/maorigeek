@@ -1,20 +1,9 @@
 .main-content
   .main-content-inner.content-width
-    / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    / Main Column / Sidebar
-    / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     .column-container
-      / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      / Main Column
-      / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       .column-three-qtr
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / Blog Post
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         .blog-post.actual-post
-          / Title
           %h1 Super awesome blog page title
-          / Meta
           .blog-meta
             .meta-item
               .meta-title.published Date:
@@ -30,52 +19,19 @@
               = succeed "," do
                 %a{href: "#"} amazing
               %a{href: "#"} badass
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          / Content
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
           .blog-content
-            / Paragraph
             %p The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-            / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            / Image (Place images in "#portfolio-blog-slider" for multiple image slider)
-            / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             .media
               #portfolio-blog-slider-container
                 #portfolio-blog-slider
-                  / ~~~~~~~~~~~~~~~~~
-                  / Actual Images
-                  / ~~~~~~~~~~~~~~~~~
                   %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
                   %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large-2.jpg"}/
-                  / ~~~~~~~~~~~~~~~~~
-                  / END Actual Images
-                  / ~~~~~~~~~~~~~~~~~
-                / ~~~~~~~~~~~~~~~~~
-                / Slide Controls
-                / ~~~~~~~~~~~~~~~~~
                 .portfolio-blog-slider-controls
                   #portfolio-blog-slider-prev
                   #portfolio-blog-slider-next
-                / ~~~~~~~~~~~~~~~~~
-                / END Slide Controls
-                / ~~~~~~~~~~~~~~~~~
-            / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            / END Image
-            / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            / H3 Title
             %h3 Where does it come from?
-            / Paragraph
             %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
             %p Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          / END Content
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / END Blog Post
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / Share Links
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         %ul.post-sharing
           %li
             %a{href: "#"}
@@ -97,54 +53,20 @@
             %a{href: "#"}
               %i.fa.fa-google-plus
               .tooltip Share on Google+
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / END Share Links
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / Divider
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         .divider
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / END Divider
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / Reader Comments
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         .comments
           %h2 Reader Comments
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          / Comment
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
           .comment
-            / Username
             .username
               %a{href: "#"} admin
               says:
-            / Date
             .date
               July 22, 2011 at 12:41am
-            / Message
             .message
               %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur
-            / Reply Link
             .link
               %a{href: "#"} Reply
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          / END Comment
-          / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / END Reader Comments
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / Divider
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         .divider
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / END Divider
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / Post Comment Form
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         .comment-form
           %h2 Post your comment
           %form#comment-form{action: "#", method: "post", name: "comment-form"}
@@ -158,15 +80,6 @@
             %textarea{name: "comment", placeholder: "Comment *"}
             / Submit Button
             %input.accent{type: "submit", value: "Submit Comment"}/
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / END Post Comment Form
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      / END Main Column
-      / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      / Sidebar
-      / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       .column-one-fourth.sidebar
         / ~~~~~~~~~~~~~~~~~
         / Categories
@@ -179,12 +92,6 @@
           %a{href: "#"} Grade-A Online Marketing
           %a{href: "#"} Portable Computing
           %a{href: "#"} Online Merchandising
-        / ~~~~~~~~~~~~~~~~~
-        / END Categories
-        / ~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~
-        / Search
-        / ~~~~~~~~~~~~~~~~~
         .sidebar-widget.search
           / Title
           %h3 Blog Search
@@ -195,12 +102,6 @@
               %input#blog-search{name: "blog-search", placeholder: "Type and hit enter", type: "text"}/
               / Search Button
               %input#go.go{type: "submit", value: ""}/
-        / ~~~~~~~~~~~~~~~~~
-        / END Search
-        / ~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~
-        / Latest Project
-        / ~~~~~~~~~~~~~~~~~
         .sidebar-widget.project
           / Title
           %h3 Latest Project
@@ -212,18 +113,9 @@
             %a{href: "portfolio-detail.html"} ATEX Sportsware
           / Tags
           .tags Branding
-        / ~~~~~~~~~~~~~~~~~
-        / END Latest Project
-        / ~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~
-        / Popular Posts
-        / ~~~~~~~~~~~~~~~~~
         .sidebar-widget.posts
           / Title
           %h3 Popular Posts
-          / ~~~~~~~~~~~~~~~~~
-          / Post
-          / ~~~~~~~~~~~~~~~~~
           .post
             / Image Column
             .img-column
@@ -236,12 +128,6 @@
                 %a{href: "blog-post.html"} Lorem Ipsum is simply dummy text of the printing
               / Date
               .date 14 December 2011
-          / ~~~~~~~~~~~~~~~~~
-          / END Post
-          / ~~~~~~~~~~~~~~~~~
-          / ~~~~~~~~~~~~~~~~~
-          / Post
-          / ~~~~~~~~~~~~~~~~~
           .post
             / Image Column
             .img-column
@@ -254,12 +140,6 @@
                 %a{href: "blog-post.html"} Super awesome blog page title
               / Date
               .date 14 December 2011
-          / ~~~~~~~~~~~~~~~~~
-          / END Post
-          / ~~~~~~~~~~~~~~~~~
-          / ~~~~~~~~~~~~~~~~~
-          / Post
-          / ~~~~~~~~~~~~~~~~~
           .post
             / Image Column
             .img-column
