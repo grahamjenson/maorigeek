@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require basix
 //= require_tree .
+

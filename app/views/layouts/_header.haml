@@ -1,0 +1,55 @@
+.topbar-outer.dark
+  .topbar.content-width
+    .table.fullheight
+      .table-cell.fullheight.middle
+        .logo
+          %a{href: "index.html"}
+            %img{alt: "", height: "17", src: "assets/topbar/logo_white.png"}/
+    %ul.topsocial
+      %li
+        %a{href: "#"}
+          %i.fa.fa-linkedin-square
+          .tooltip LinkedIn
+      %li
+        %a{href: "#"}
+          %i.fa.fa-facebook
+          .tooltip Facebook
+      %li
+        %a{href: "#"}
+          %i.fa.fa-twitter
+          .tooltip Twitter
+      %li
+        %a{href: "#"}
+          %i.fa.fa-google-plus
+          .tooltip Google+
+    %ul.topnav
+      %li
+        %a.current{href: "index.html"} Home
+      %li
+        %a{href: "about.html"} About Us
+      %li
+        %a.drop{href: "portfolio.html"} Portfolio
+        %ul
+          %li
+            %a{href: "portfolio.html"} 4 Column Portfolio
+          %li
+            %a{href: "portfolio-3-columns.html"} 3 Column Portfolio
+          %li
+            %a{href: "portfolio-detail.html"} Portfolio Detail
+      %li
+        %a.drop{href: "blog.html"} Blog
+        %ul
+          %li
+            %a{href: "blog.html"} Article List
+          %li
+            %a{href: "blog-post.html"} Blog Post
+      %li
+        %a{href: "shortcodes.html"} Shortcodes
+      %li
+        %a{href: "contact.html"} Contact Us
+    %a.mobilenav-click{href: "#"}
+      .mobilenav-button-container
+        .mobilenav-button-inner
+          .mobilenav-button
+    .mobilenav-container
+      %ul.mobilenav

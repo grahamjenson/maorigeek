@@ -1,0 +1,105 @@
+.footer-container
+  .spacer
+  .content-width
+    .client-logos-container
+      .client-logos-title
+        %span Recent Clients
+      #clients-back
+      #clients-next
+      .carousel
+        %ul#clients-carousel.column-container
+          %li
+            .logo-outer
+              .logo-inner
+                / Actual Logo
+                %img{alt: "", src: "assets/client-logos/logo1.png"}/
+          %li
+            .logo-outer
+              .logo-inner
+                %img{alt: "", src: "assets/client-logos/logo2.png"}/
+          %li
+            .logo-outer
+              .logo-inner
+                %img{alt: "", src: "assets/client-logos/logo3.png"}/
+          %li
+            .logo-outer
+              .logo-inner
+                %img{alt: "", src: "assets/client-logos/logo4.png"}/
+          %li
+            .logo-outer
+              .logo-inner
+                %img{alt: "", src: "assets/client-logos/logo5.png"}/
+          %li
+            .logo-outer
+              .logo-inner
+                %img{alt: "", src: "assets/client-logos/logo6.png"}/
+  .footer-infobar
+    .content-width
+      If you're looking for a corporate theme that stands out from the usual junk then it's your lucky day!
+  .footer
+    .content-width
+      .column-container
+        .column-one-fourth
+          %img.logo{alt: "", height: "17", src: "assets/topbar/logo_white.png", width: "57"}/
+          %p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.
+          %p
+            %a{href: "about.html"} Meet the team
+        .column-one-fourth
+          %h3 Latest on Twitter
+          %ul#twitter-feed
+        .column-one-fourth
+          %h3 Latest on Flickr
+        .column-one-fourth
+          %h3 Newsletter
+          .footer-newsletter
+            %form#newsletter{action: "#", method: "post", name: "newsletter"}
+              .container
+                %input.textbox{name: "name", placeholder: "Email Address", type: "text"}/
+                %input#submit.button{name: "submit", type: "submit", value: "Sign Up"}/
+          %h3 Follow Us
+          %ul.footer-social
+            %li
+              %a{href: "#"}
+                %i.fa.fa-linkedin-square
+                .tooltip LinkedIn
+            %li
+              %a{href: "#"}
+                %i.fa.fa-facebook
+                .tooltip Facebook
+            %li
+              %a{href: "#"}
+                %i.fa.fa-twitter
+                .tooltip Twitter
+            %li
+              %a{href: "#"}
+                %i.fa.fa-google-plus
+                .tooltip Google+
+            %li
+              %a{href: "#"}
+                %i.fa.fa-youtube
+                .tooltip YouTube
+            %li
+              %a{href: "#"}
+                %i.fa.fa-pinterest
+                .tooltip Pinterest
+      .footer-lower-container
+        %ul.footer-lower
+          %li
+            %a{href: "index.html"} Home
+          %li
+            %a{href: "about.html"} About Us
+          %li
+            %a{href: "portfolio.html"} Portfolio
+          %li
+            %a{href: "blog.html"} Blog
+          %li
+            %a{href: "shortcodes.html"} Shortcodes
+          %li
+            %a{href: "contact.html"} Contact Us
+        .footer-copyright
+          Copyright © 2013
+          = succeed "." do
+            %a{href: "http://www.artivity.co.uk", target: "_blank"} Artivity
+      %a.top-of-page-link{href: "#"}
+        %i.fa.fa-chevron-up

@@ -6,6 +6,9 @@ class Post < ActiveRecord::Base
   before_save :generate_slug
 
   accepts_nested_attributes_for :tags
+
+  scope :recent, ->{order('created_at DESC').limit(3)}
+  
   def generate_slug
     self.slug = self.title.dup.slugorize!
   end
