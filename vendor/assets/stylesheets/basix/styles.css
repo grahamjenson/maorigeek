@@ -434,7 +434,7 @@ a.image-link:hover:after {
 }
 .dark-bg .main-container, .dark-bg .client-logos-title span {
   background-color: #2e3137;
-  background-image: url(../images/dark-footer-overlay.png);
+  background-image: url(/assets/dark-footer-overlay.png);
 }
 @media only screen and (min-width: 1059px) {
   body.contained {
@@ -510,11 +510,11 @@ body.home .main-content-inner {
 /* -------------------------------- */
 .topbar-outer.dark {
   background-color: #2e3137;
-  background-image: url(../images/topbar/30-percent-dark.png);
+  background-image: url(/assets/topbar/30-percent-dark.png);
 }
 body.home .topbar-outer.dark {
   background-color: transparent;
-  background-image: url(../images/topbar/30-percent-dark.png);
+  background-image: url(/assets/topbar/30-percent-dark.png);
 }
 /* -------------------------------- */
 /* Logo
@@ -2671,7 +2671,7 @@ i {
 .light-bg .footer {
   color: rgba(255,255,255,0.6);
   background-color: #2e3137;
-  background-image: url(../images/dark-footer-overlay.png);
+  background-image: url(/assets/dark-footer-overlay.png);
 }
 .dark-bg .footer {
   color: #6f6f6f;
