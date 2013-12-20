@@ -1,0 +1,26 @@
+@mixin client-logo
+  width: 150px
+  height: 50px
+  margin-bottom: 10px
+  &:hover
+    background-position: 0 -50px
+
+.audioculture-logo
+  +client-logo
+  background: url(asset_path('logos/audioculture.png')) no-repeat top
+
+.nzonscreen-logo
+  +client-logo
+  background: url(asset_path('logos/nzonscreen.jpg')) no-repeat top
+
+.crackerjacks-logo
+  +client-logo
+  background: url(asset_path('logos/crackerjacks.jpg')) no-repeat top
+
+.makingtracks-logo
+  +client-logo
+  background: url(asset_path('logos/makingtracks.png')) no-repeat top
+
+.loyaltynz-logo
+  +client-logo
+  background: url(asset_path('logos/loyaltynz.png')) no-repeat top
