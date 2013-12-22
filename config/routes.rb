@@ -7,6 +7,8 @@ Maorigeek::Application.routes.draw do
   get 'home' => 'home#home', as: 'home'
   get 'about' => 'home#about', as: 'about'
   get 'contact' => 'home#contact', as: 'contact'
-  get 'blog' => 'home#home', as: 'blog'
+  post 'contact' => 'home#contact_form_submit', as: 'contact_form'
+  get 'blog' => 'home#blog', as: 'blog'
+  get 'post/:id' => 'home#post', as: 'post'
   get 'portfolio' => 'home#portfolio', as: 'portfolio'
 end

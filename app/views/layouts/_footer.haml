@@ -33,12 +33,6 @@
         .column-one-fourth
         .column-one-fourth
         .column-one-fourth
-          %h3 Newsletter
-          .footer-newsletter
-            %form#newsletter{action: "#", method: "post", name: "newsletter"}
-              .container
-                %input.textbox{name: "name", placeholder: "Email Address", type: "text"}/
-                %input#submit.button{name: "submit", type: "submit", value: "Sign Up"}/
           %h3 Follow Us
           %ul.footer-social
             %li
@@ -49,6 +43,11 @@
               %a{href: "https://twitter.com/grahamjenson"}
                 %i.fa.fa-twitter
                 .tooltip Twitter
+            %li
+              %a{href: "https://github.com/grahamjenson"}
+                %i.fa.fa-github
+                .tooltip Github
+                
       .footer-lower-container
         %ul.footer-lower
           %li

@@ -5,7 +5,7 @@
     %meta{charset: "utf-8"}
     %meta{content: "initial-scale=1", name: "viewport"}
 
-    %title Maorigeek
+    %title= "maori.geek #{yield(:title)}"
     %link{href: 'http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800', rel: 'stylesheet', type: 'text/css'}
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
@@ -14,5 +14,18 @@
   %body.light-bg
     .main-container
       = render :partial => 'layouts/header'
-      = yield
+      = yield :banner
+      .main-content
+        .main-content-inner.content-width
+          .flashes
+            - if flash[:error]
+              .alert.red
+                = flash[:error]
+            - if flash[:alert]
+              .alert.amber
+                = flash[:alert]
+            - if flash[:notice]
+              .alert.green
+                = flash[:notice]
+          = yield
       = render :partial => 'layouts/footer'

@@ -1,176 +1,119 @@
-.home-banner.dark
-  %ul#home-slider.slider-container
-    %li.slide-outer
-      .slide-inner
-        .content-width
-          .slide-style-1
-            %h1
-              Software Development
-              %span .
-            %p Reduce the Complexity; Increase Flexibility
-    %li.slide-outer
-      .slide-inner
-        .content-width
-          .slide-style-2
-            .icon-container
-              .icon-backing
-                %i.fa.fa-bar-chart-o
-            %h1
-              Big Data Analytics to make  
-              %span Data Driven Decisions
-            %p Learn to ask the right questions and stop guessing what your customers want.
-    %li.slide-outer
-      .slide-inner
-        .content-width
-          .slide-style-3
-            .left-column
+- content_for(:title, 'Home')
+- content_for(:tab, 'home')
+- content_for :banner do
+  .home-banner.dark
+    %ul#home-slider.slider-container
+      %li.slide-outer
+        .slide-inner
+          .content-width
+            .slide-style-1
               %h1
-                Design
-                %span Usable
-                Experiences
-              %p Put your users first when creating a product
-  .slider-nav-container
-    .slider-nav-inner
-      .slider-nav.content-width
-        %ul#bx-pager
-          %li
-            %a{"data-slide-index" => "0", href: ""} Software Development
-          %li
-            %a{"data-slide-index" => "1", href: ""} Data Analytics
-          %li
-            %a{"data-slide-index" => "2", href: ""} User Experience
-        .slider-controls
-          #slider-pause
-          #slider-prev
-          #slider-next
-.home-cta-bar-container.accent
-  .content-width
-    .home-cta-bar
-      .text
-        Maori Geek can help you design and implement software that you and your uses will enjoy 
-      .home-cta-bar-button
-        %a.button.transparent{href: contact_path}
-          %i.fa.fa-envelope>
-          Contact Us Now
-.main-content.home
-  .main-content-inner.content-width
-    .column-container
-      .column-one-third
-        .icons-column
-          .icon-backing{style: "background-color: #66b9b4;"}
-            %i.fa.fa-heart
-        .content-column
-          %h3 Passionate Developers
-          %p We love to code, everything
-      .column-one-third
-        .icons-column
-          .icon-backing{style: "background-color: #6E6588;"}
-            %i.fa.fa-group
-        .content-column
-          %h3 Client & Customer Focused
-          %p Our goals is to solve your problems
-      .column-one-third
-        .icons-column
-          .icon-backing{style: "background-color: #63885F;"}
-            %i.fa.fa-desktop
-        .content-column
-          %h3 Agile Development
-          %p On-site, flexible and robust products
+                Software Development
+                %span .
+              %p Reduce the Complexity; Increase Flexibility
+      %li.slide-outer
+        .slide-inner
+          .content-width
+            .slide-style-2
+              .icon-container
+                .icon-backing
+                  %i.fa.fa-bar-chart-o
+              %h1
+                Big Data Analytics to make  
+                %span Data Driven Decisions
+              %p Learn to ask the right questions and stop guessing what your customers want.
+      %li.slide-outer
+        .slide-inner
+          .content-width
+            .slide-style-3
+              .left-column
+                %h1
+                  Design
+                  %span Usable
+                  Experiences
+                %p Put your users first when creating a product
+    .slider-nav-container
+      .slider-nav-inner
+        .slider-nav.content-width
+          %ul#bx-pager
+            %li
+              %a{"data-slide-index" => "0", href: ""} Software Development
+            %li
+              %a{"data-slide-index" => "1", href: ""} Data Analytics
+            %li
+              %a{"data-slide-index" => "2", href: ""} User Experience
+          .slider-controls
+            #slider-pause
+            #slider-prev
+            #slider-next
+  .home-cta-bar-container.accent
+    .content-width
+      .home-cta-bar
+        .text
+          Maori Geek can help you design and implement software that you and your uses will enjoy 
+        .home-cta-bar-button
+          %a.button.transparent{href: contact_path}
+            %i.fa.fa-envelope>
+            Contact Us Now
+.column-container
+  .column-one-third
+    .icons-column
+      .icon-backing{style: "background-color: #66b9b4;"}
+        %i.fa.fa-heart
+    .content-column
+      %h3 Passionate Developers
+      %p We love to code, everything
+  .column-one-third
+    .icons-column
+      .icon-backing{style: "background-color: #6E6588;"}
+        %i.fa.fa-group
+    .content-column
+      %h3 Client & Customer Focused
+      %p Our goals is to solve your problems
+  .column-one-third
+    .icons-column
+      .icon-backing{style: "background-color: #63885F;"}
+        %i.fa.fa-desktop
+    .content-column
+      %h3 Agile Development
+      %p On-site, flexible and robust products
+.divider
+%h3.section-title Latest Work
+#portfolio-nav.carousel-nav
+  .back
+  .next
+.carousel
+  %ul#portfolio-carousel.slider-container
+    - for i in (1..10)
+      %li.column-one-fourth.portfolio-item.branding
+        = render partial: 'portfolio_item'
+.column-container
+  .column-three-qtr
     .divider
-    %h3.section-title Latest Work
-    #portfolio-nav.carousel-nav
+    %h3.section-title What's going on?
+    #blog-nav.carousel-nav
       .back
       .next
     .carousel
-      %ul#portfolio-carousel.slider-container
-        %li.column-one-fourth.portfolio-item.branding
-          %a.image-link{href: "portfolio-detail.html"}
-            %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-          %h3
-            %a{href: "portfolio-detail.html"} ATEX Sportsware
-          .tags Branding
-        %li.column-one-fourth.portfolio-item.coding
-          %a.image-link{href: "portfolio-detail.html"}
-            %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-          %h3
-            %a{href: "portfolio-detail.html"} Farmers Insurance
-          .tags Code Development
-        %li.column-one-fourth.portfolio-item.branding.identity
-          %a.image-link{href: "portfolio-detail.html"}
-            %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-          %h3
-            %a{href: "portfolio-detail.html"} Royal Palm Plaza
-          .tags Branding, Identity
-        %li.column-one-fourth.portfolio-item.identity
-          %a.image-link{href: "portfolio-detail.html"}
-            %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-          %h3
-            %a{href: "portfolio-detail.html"} PSB40
-          .tags Identity
-        %li.column-one-fourth.portfolio-item.coding
-          %a.image-link{href: "portfolio-detail.html"}
-            %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-          %h3
-            %a{href: "portfolio-detail.html"} ASPCA
-          .tags Code Development
-        %li.column-one-fourth.portfolio-item.branding
-          %a.image-link{href: "portfolio-detail.html"}
-            %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-          %h3
-            %a{href: "portfolio-detail.html"} Airport Shopping
-          .tags Branding
-    .column-container
-      .column-three-qtr
-        .divider
-        %h3.section-title What's going on?
-        #blog-nav.carousel-nav
-          .back
-          .next
-        .carousel
-          %ul#blog-carousel.slider-container
-            %li.column-one-fourth
-              %a.image-link{href: "blog-post.html"}
-                %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-              %h3
-                %a{href: "blog-post.html"} Lorem Ipsum is simply dummy text of the printing
-              .date 12th June 2013
-              %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of ...
-              %a{href: "blog-post.html"} Read More
-            %li.column-one-fourth
-              %a.image-link{href: "blog-post.html"}
-                %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-              %h3
-                %a{href: "blog-post.html"} Contrary to popular belief, Lorem Ipsum is not just text
-              .date 12th June 2013
-              %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of ...
-              %a{href: "blog-post.html"} Read More
-            %li.column-one-fourth
-              %a.image-link{href: "blog-post.html"}
-                %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-              %h3
-                %a{href: "blog-post.html"} The standard chunk of Lorem Ipsum used since the
-              .date 12th June 2013
-              %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of ...
-              %a{href: "blog-post.html"} Read More
-      .column-one-fourth
-        .divider
-        %h3.section-title Testimonials
-        #testimonials-nav.carousel-nav
-          .back
-          .next
-        .carousel
-          %ul#testimonials-carousel.slider-container
-            %li.column-one-fourth
-              .testimonial-text
-                %p "What ever happened to predictability? Everywhere you look, everywhere you go, there's a heart, a hand to hold onto."
-              .testimonial-name
-                Joe Bloggs
-              .testimonial-link
-                %a{href: "#"} Company Name
-            %li.column-one-fourth
-              .testimonial-text
-                %p "Basix have proven time and time again that they can deliver results on time and on price!"
-              .testimonial-name
-                Joe Bloggs
-              .testimonial-link
-                %a{href: "#"} ThemeForest
+      %ul#blog-carousel.slider-container
+        - for i in (1..10)  
+          = render partial: 'blog_post_stub'
+  .column-one-fourth
+    .divider
+    %h3.section-title Testimonials
+    #testimonials-nav.carousel-nav
+      .back
+      .next
+    .carousel
+      %ul#testimonials-carousel.slider-container
+        %li.column-one-fourth
+          .testimonial-text
+            %p "There is something impossibly difficult about the telescoping nature of the story this tries to tell, and the combination of the two perspectives - the timeline and then video - to create a powerful impression."
+            Lawrence Lessig
+          .testimonial-link
+            %a{href: "http://www.mixandmash.org.nz/may-showcase/supreme-award-may-showcase-highly-commended"} About Mihimihi
+        %li.column-one-fourth
+          .testimonial-text
+            %p "Data-based arguments for a clearly communicated positions - imagine that! Very slick separation of the economic dimensions under debate. Specific, and wide-ranging references"
+          .testimonial-link
+            %a{href: "http://www.mixandmash.org.nz/2011-winners/supreme-data-mashup/"} About 100 Companies

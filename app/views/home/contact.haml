@@ -1,56 +1,40 @@
-.main-content
-  .main-content-inner.content-width
-    %h1 Contact Us
-    %p The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-    .spacer
-    .spacer
-    .column-container
-      .column-one-third
-        .icons-column.vertical-center
-          / Icon Backing
-          .icon-backing
-            / Icon
-            %i.fa.fa-phone
-        .content-column.vertical-center
-          / Title
-          %h3.no-margin Telephone Us
-          / Text
-          %p +44 (0)1234 567 890
-      .column-one-third
-        .icons-column.vertical-center
-          / Icon Backing
-          .icon-backing
-            / Icon
-            %i.fa.fa-envelope
-        .content-column.vertical-center
-          / Title
-          %h3.no-margin Email Us
-          / Text
-          %p
-            %a{href: "#"} hello@basix.com
-      .column-one-third
-        .icons-column.vertical-center
-          / Icon Backing
-          .icon-backing
-            / Icon
-            %i.fa.fa-map-marker
-        .content-column.vertical-center
-          / Title
-          %h3.no-margin Location
-          / Text
-          %p 21 Jump Street, Maidenhead
-    .spacer
-    .spacer
-    .spacer
-    .contact-form
-      %form#comment-form{action: "#", method: "post", name: "contact-form"}
-        / Textbox
-        %input{name: "name", placeholder: "Name *", type: "text"}/
-        / Textbox
-        %input{name: "email", placeholder: "Email Address *", type: "text"}/
-        / Textbox
-        %input{name: "phone", placeholder: "Phone", type: "text"}/
-        / Message Box
-        %textarea{name: "message", placeholder: "Message *"}
-        / Submit Button
-        %input.accent{type: "submit", value: "Submit Comment"}/
+- content_for(:title, 'Contact')
+- content_for(:tab, 'contact')
+%h1 Contact Us
+%p If you want to have a chat, or a coffee and discuss your plans and projects, give us a yell @
+.spacer
+.spacer
+.column-container
+  .column-one-third
+    .icons-column.vertical-center
+      .icon-backing
+        %i.fa.fa-phone
+    .content-column.vertical-center
+      %h3.no-margin Telephone Us
+      %p +64 (0)21 144 3303
+  .column-one-third
+    .icons-column.vertical-center
+      .icon-backing
+        %i.fa.fa-envelope
+    .content-column.vertical-center
+      %h3.no-margin Email Us
+      %p
+        %a{href: "mailto:enquiry@maori.geek.nz"} enquiry@maori.geek.nz
+  .column-one-third
+    .icons-column.vertical-center
+      .icon-backing
+        %i.fa.fa-map-marker
+    .content-column.vertical-center
+      %h3.no-margin Location
+      %p Just on the internet for now.
+.spacer
+.spacer
+.spacer
+.contact-form
+  = form_tag(contact_form_path, method: "post") do
+    %form#comment-form{action: "#", method: "post", name: "contact-form"}
+      %input{name: "name", placeholder: "Name *", type: "text"}
+      %input{name: "email", placeholder: "Email Address *", type: "text"}
+      %input{name: "phone", placeholder: "Phone", type: "text"}
+      %textarea{name: "message", placeholder: "Message *"}
+      %input.accent{type: "submit", value: "Submit Comment"}

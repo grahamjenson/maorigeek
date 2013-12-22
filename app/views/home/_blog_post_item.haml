@@ -1,0 +1,17 @@
+.blog-post
+  %h1
+    %a{href: "blog-post.html"} Super awesome blog page title
+  .blog-meta
+    .meta-item
+      .meta-title.published Date:
+      %a{href: "#"} 14th January 2013
+    .meta-item
+      .meta-title.tags Tags:
+      = succeed "," do
+        %a{href: "#"} amazing
+      %a{href: "#"} badass
+  %a.media.image-link{href: "blog-post.html"}
+    %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
+  .blog-content
+    %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College ...
+    %a.button.accent{href: ""} Continue Reading

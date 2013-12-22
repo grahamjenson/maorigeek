@@ -1,166 +1,75 @@
-.main-content
-  .main-content-inner.content-width
-    .column-container
-      .column-three-qtr
-        .blog-post
-          / Title
-          %h1
-            %a{href: "blog-post.html"} Super awesome blog page title
-          / Meta
-          .blog-meta
-            .meta-item
-              .meta-title.published Date:
-              %a{href: "#"} 14th January 2013
-            .meta-item
-              .meta-title.views Views:
-              %a{href: "#"} 9
-            .meta-item
-              .meta-title.comments Comments:
-              %a{href: "#"} 2
-            .meta-item
-              .meta-title.tags Tags:
-              = succeed "," do
-                %a{href: "#"} amazing
-              %a{href: "#"} badass
-          / Image
-          %a.media.image-link{href: "blog-post.html"}
-            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-          / Excerpt
-          .blog-content
-            %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College ...
-            / Read More Button
-            %a.button.accent{href: ""} Continue Reading
-        .blog-post
-          / Title
-          %h1
-            %a{href: "blog-post.html"} Blog post with no featured image
-          / Meta
-          .blog-meta
-            .meta-item
-              .meta-title.published Date:
-              %a{href: "#"} 14th January 2013
-            .meta-item
-              .meta-title.views Views:
-              %a{href: "#"} 9
-            .meta-item
-              .meta-title.comments Comments:
-              %a{href: "#"} 2
-            .meta-item
-              .meta-title.tags Tags:
-              = succeed "," do
-                %a{href: "#"} amazing
-              %a{href: "#"} badass
-          / Excerpt
-          .blog-content
-            %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College ...
-            / Read More Button
-            %a.button.accent{href: ""} Continue Reading
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / END Blog Post
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        / Blog Post
-        / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        .blog-post
-          / Title
-          %h1
-            %a{href: "blog-post.html"} Super awesome blog page title
-          / Meta
-          .blog-meta
-            .meta-item
-              .meta-title.published Date:
-              %a{href: "#"} 14th January 2013
-            .meta-item
-              .meta-title.views Views:
-              %a{href: "#"} 9
-            .meta-item
-              .meta-title.comments Comments:
-              %a{href: "#"} 2
-            .meta-item
-              .meta-title.tags Tags:
-              = succeed "," do
-                %a{href: "#"} amazing
-              %a{href: "#"} badass
-          / Image
-          %a.media.image-link{href: "blog-post.html"}
-            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-          / Excerpt
-          .blog-content
-            %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College ...
-            / Read More Button
-            %a.button.accent{href: ""} Continue Reading
-        .blog-nav
-          %a.back{href: "#"} Older Entries
-          %a.next{href: "#"} Newer Entries
-      .column-one-fourth.sidebar
-        / ~~~~~~~~~~~~~~~~~
-        / Categories
-        / ~~~~~~~~~~~~~~~~~
-        .sidebar-widget.categories
-          / Title
-          %h3 Blog Categories
-          / Category Links
-          %a{href: "#"} Social Networking
-          %a{href: "#"} Grade-A Online Marketing
-          %a{href: "#"} Portable Computing
-          %a{href: "#"} Online Merchandising
-        .sidebar-widget.search
-          / Title
-          %h3 Blog Search
-          / Search Form
-          %form{action: "#", method: "get", name: "blog-search"}
-            .container
-              / Textbox
-              %input#blog-search{name: "blog-search", placeholder: "Type and hit enter", type: "text"}/
-              / Search Button
-              %input#go.go{type: "submit", value: ""}/
-        .sidebar-widget.project
-          / Title
-          %h3 Latest Project
-          / Image
-          %a.image-link{href: "portfolio-detail.html"}
-            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-          / Project Title
+- content_for(:title, 'Blog')
+- content_for(:tab, 'blog')
+.column-container
+  .column-three-qtr
+    - for i in (1..3)
+      = render 'blog_post_item'
+    .blog-nav
+      %a.back{href: "#"} Older Entries
+      %a.next{href: "#"} Newer Entries
+  .column-one-fourth.sidebar
+    / ~~~~~~~~~~~~~~~~~
+    / Categories
+    / ~~~~~~~~~~~~~~~~~
+    .sidebar-widget.categories
+      / Title
+      %h3 Blog Categories
+      / Category Links
+      %a{href: "#"} Social Networking
+      %a{href: "#"} Grade-A Online Marketing
+      %a{href: "#"} Portable Computing
+      %a{href: "#"} Online Merchandising
+    .sidebar-widget.search
+      / Title
+      %h3 Blog Search
+      / Search Form
+      %form{action: "#", method: "get", name: "blog-search"}
+        .container
+          / Textbox
+          %input#blog-search{name: "blog-search", placeholder: "Type and hit enter", type: "text"}/
+          / Search Button
+          %input#go.go{type: "submit", value: ""}/
+    .sidebar-widget.project
+      / Title
+      %h3 Latest Project
+      / Image
+      = render partial: 'portfolio_item'
+    .sidebar-widget.posts
+      / Title
+      %h3 Popular Posts
+      .post
+        / Image Column
+        .img-column
+          %a.image-link.mini{href: "blog-post.html"}
+            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
+        / Content Column
+        .content-column
+          / Post Title
           %h3.sub-title
-            %a{href: "portfolio-detail.html"} ATEX Sportsware
-          / Tags
-          .tags Branding
-        .sidebar-widget.posts
-          / Title
-          %h3 Popular Posts
-          .post
-            / Image Column
-            .img-column
-              %a.image-link.mini{href: "blog-post.html"}
-                %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
-            / Content Column
-            .content-column
-              / Post Title
-              %h3.sub-title
-                %a{href: "blog-post.html"} Lorem Ipsum is simply dummy text of the printing
-              / Date
-              .date 14 December 2011
-          .post
-            / Image Column
-            .img-column
-              %a.image-link.mini{href: "blog-post.html"}
-                %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
-            / Content Column
-            .content-column
-              / Post Title
-              %h3.sub-title
-                %a{href: "blog-post.html"} Super awesome blog page title
-              / Date
-              .date 14 December 2011
-          .post
-            / Image Column
-            .img-column
-              %a.image-link.mini{href: "blog-post.html"}
-                %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
-            / Content Column
-            .content-column
-              / Post Title
-              %h3.sub-title
-                %a{href: "blog-post.html"} The standard chunk of Lorem Ipsum used since...
-              / Date
-              .date 14 December 2011
+            %a{href: "blog-post.html"} Lorem Ipsum is simply dummy text of the printing
+          / Date
+          .date 14 December 2011
+      .post
+        / Image Column
+        .img-column
+          %a.image-link.mini{href: "blog-post.html"}
+            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
+        / Content Column
+        .content-column
+          / Post Title
+          %h3.sub-title
+            %a{href: "blog-post.html"} Super awesome blog page title
+          / Date
+          .date 14 December 2011
+      .post
+        / Image Column
+        .img-column
+          %a.image-link.mini{href: "blog-post.html"}
+            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
+        / Content Column
+        .content-column
+          / Post Title
+          %h3.sub-title
+            %a{href: "blog-post.html"} The standard chunk of Lorem Ipsum used since...
+          / Date
+          .date 14 December 2011

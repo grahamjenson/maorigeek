@@ -10,6 +10,12 @@ class HomeController < ApplicationController
   def contact
   end
 
+  def contact_form_submit
+    FormMailer.contact_form_mail(params).deliver
+    flash[:notice] = 'Thank you for the message'
+    redirect_to :contact
+  end
+
   def portfolio
   end
 

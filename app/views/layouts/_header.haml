@@ -14,17 +14,22 @@
         %a{href: "https://twitter.com/grahamjenson"}
           %i.fa.fa-twitter
           .tooltip Twitter
+      %li
+        %a{href: "https://github.com/grahamjenson"}
+          %i.fa.fa-github
+          .tooltip Github
     %ul.topnav
+      - tab = yield(:tab)
       %li
-        %a.current{href: "index.html"} Home
+        %a{href: "index.html", class: (tab == 'home' ? 'current' : '')} Home
       %li
-        %a{href: "about.html"} About Us
+        %a{href: "about.html", class: (tab == 'about' ? 'current' : '')} About Us
       %li
-        %a{href: "portfolio.html"} Portfolio
+        %a{href: "portfolio.html", class: (tab == 'portfolio' ? 'current' : '')} Portfolio
       %li
-        %a{href: "blog.html"} Blog
+        %a{href: "blog.html", class: (tab == 'blog' ? 'current' : '')} Blog
       %li
-        %a{href: "contact.html"} Contact Us
+        %a{href: "contact.html", class: (tab == 'contact' ? 'current' : '')} Contact Us
     %a.mobilenav-click{href: "#"}
       .mobilenav-button-container
         .mobilenav-button-inner

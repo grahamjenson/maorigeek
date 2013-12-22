@@ -1,17 +1,18 @@
-.main-content
-  .main-content-inner.content-width
-    .relative
-      %h1 Some of our latest work
-      .portfolio-filtering
-        %ul#portfolio-filters
-          %li
-            %span.filter.active{"data-filter" => "branding coding identity"} Show all
-          %li
-            %span.filter{"data-filter" => "branding"} Branding
-          %li
-            %span.filter{"data-filter" => "coding"} Coding
-          %li
-            %span.filter{"data-filter" => "identity"} Identity
-    %ul#portfolio.column-container.grid
-      - for i in (1..10)  
-        = render partial: 'portfolio_item'
+- content_for(:title, 'Portfolio')
+- content_for(:tab, 'portfolio')
+.relative
+  %h1 Some of our latest work
+  .portfolio-filtering
+    %ul#portfolio-filters
+      %li
+        %span.filter.active{"data-filter" => "branding coding identity"} Show all
+      %li
+        %span.filter{"data-filter" => "branding"} Branding
+      %li
+        %span.filter{"data-filter" => "coding"} Coding
+      %li
+        %span.filter{"data-filter" => "identity"} Identity
+%ul#portfolio.column-container.grid
+  - for i in (1..10)
+    %li.column-one-fourth.portfolio-item.branding
+      = render partial: 'portfolio_item'
