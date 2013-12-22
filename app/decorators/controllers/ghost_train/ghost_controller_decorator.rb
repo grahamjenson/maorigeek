@@ -16,7 +16,7 @@ GhostTrain::GhostController.class_eval do
   end
 
   def get_post(id)
-    GhostPostSerializer.new (Post.find(id)).to_json
+    GhostPostSerializer.new(Post.find(id)).to_json
   end
 
   def update_post(id, params)
@@ -38,7 +38,7 @@ GhostTrain::GhostController.class_eval do
     tag_list = params[:tags].map{|x| x[:name]}.join(', ')
     params.delete(:tags)
 
-    params = params.permit(:title, :markdown)
+    params = params.permit(:title, :markdown, :state)
     post.assign_attributes(params)
     post.tag_list = tag_list
     post
