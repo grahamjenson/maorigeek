@@ -10,10 +10,11 @@ class Post < ActiveRecord::Base
   scope :drafts, ->{ where(:state => :draft) }
   scope :published, ->{ where(:state => :published) }
   
-  scope :recent, ->{publisheds.order('created_at DESC')}
+  scope :recent, ->{published.order('created_at DESC')}
   
 
   state_machine :initial => :draft do
+
 
     state :published do
     end
@@ -21,9 +22,26 @@ class Post < ActiveRecord::Base
     state  :draft do
     end
 
+    before_transition :on => :publish, :do => :set_published_at_state
+    before_transition :on => :unpublish, :do => :unset_published_at_state
+
     event :publish do
       transition :draft => :published
     end
+
+    event :unpublish do
+      transition :published => :draft
+    end
+  end
+
+  def unset_published_at_state
+    self.published_at = nil
+    save
+  end
+
+  def set_published_at_state
+    self.published_at = Time.now
+    save #TODO find better way than saving twice
   end
 
   def generate_slug

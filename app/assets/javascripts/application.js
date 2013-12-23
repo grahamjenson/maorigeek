@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require basix
+//= require ghost_train/frontend
 //= require_tree .
 

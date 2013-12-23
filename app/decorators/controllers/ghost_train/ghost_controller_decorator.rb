@@ -34,16 +34,38 @@ GhostTrain::GhostController.class_eval do
   
   def ghost_post_params(post, params)
     params.delete(:id)
-    params[:state] = params[:status]
-    params.delete(:status)
 
+    #Handle state
+    state = params[:status]
+    params.delete(:status)
+    handle_state(post, state)
+
+    #handle tags
     tag_list = params[:tags].map{|x| x[:name]}.join(', ') if params[:tags]
     params.delete(:tags)
+    handle_tag_list(post, tag_list)
+
 
     params = params.permit(:title, :markdown, :state)
     post.assign_attributes(params)
-    post.tag_list = tag_list
+    
     post
+  end
+
+  def handle_tag_list(post, tag_list)
+    post.tag_list = tag_list
+  end
+
+  def handle_state(post, state)
+    return if post.state == state
+
+    #TODO simple for now
+    if state == 'published'
+      post.publish
+    elsif state == 'draft'
+      post.unpublish
+    end
+    
   end
 
   def get_messages
