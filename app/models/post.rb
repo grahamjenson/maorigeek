@@ -7,8 +7,25 @@ class Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :tags
 
-  scope :recent, ->{order('created_at DESC').limit(3)}
+  scope :drafts, ->{ where(:state => :draft) }
+  scope :published, ->{ where(:state => :published) }
   
+  scope :recent, ->{publisheds.order('created_at DESC')}
+  
+
+  state_machine :initial => :draft do
+
+    state :published do
+    end
+
+    state  :draft do
+    end
+
+    event :publish do
+      transition :draft => :published
+    end
+  end
+
   def generate_slug
     self.slug = self.title.dup.slugorize!
   end

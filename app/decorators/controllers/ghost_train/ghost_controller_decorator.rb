@@ -26,6 +26,7 @@ GhostTrain::GhostController.class_eval do
   end
 
   def create_post(params)
+    #return  {"error" => "You do not have permission to fjdsfjodsfdsjofadd posts." }.to_json
     p = ghost_post_params(Post.new, params)
     p.save
     GhostPostSerializer.new(p).to_json
@@ -35,12 +36,17 @@ GhostTrain::GhostController.class_eval do
     params.delete(:id)
     params[:state] = params[:status]
     params.delete(:status)
-    tag_list = params[:tags].map{|x| x[:name]}.join(', ')
+
+    tag_list = params[:tags].map{|x| x[:name]}.join(', ') if params[:tags]
     params.delete(:tags)
 
     params = params.permit(:title, :markdown, :state)
     post.assign_attributes(params)
     post.tag_list = tag_list
     post
+  end
+
+  def get_messages
+    @messages || []
   end
 end
