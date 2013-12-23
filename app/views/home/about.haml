@@ -1,145 +1,33 @@
 - content_for(:title, 'About')
 - content_for(:tab, 'about')
 
-%h1 We’re World-Class. Fact.
-%h3 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.
-/ Text
-%p The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum” by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+%h1 We are a Software Developer's looking to make your ideas reality.
+%h3 Our goal is to create usable, scalable systems that you and your customers will love to use.
+%p If you have an idea you would like to develop, an existing system you would like to extend, or a product already in developmet. We can help you in development, user experience design, and measuring the analysing the outcomes of your project.
 .spacer
 .column-container
   .column-one-third.center
     .icon-container.big-icon
-      / Icon Backing
       .icon-backing{style: "background-color: #63885F;"}
-        / Icon
         %i.fa.fa-heart
-    / Title
-    %h3 What is Lorem Ipsum?
-    / Text
-    %p Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula.
+    %h3 Software Development
+    %p Creation or Extension of Software systems
   .column-one-third.center
     .icon-container.big-icon
-      / Icon Backing
       .icon-backing{style: "background-color: #d28762;"}
-        / Icon
-        %i.fa.fa-flag
-    / Title
-    %h3 What is Lorem Ipsum?
-    / Text
-    %p Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula.
+        %i.fa.fa-group
+    %h3 User Experience
+    %p Making software which users like using
   .column-one-third.center
     .icon-container.big-icon
-      / Icon Backing
       .icon-backing{style: "background-color: #6E6588;"}
-        / Icon
-        %i.fa.fa-table
-    / Title
-    %h3 What is Lorem Ipsum?
-    / Text
-    %p Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula.
+        %i.fa.fa-desktop
+    %h3 Data Analytics
+    %p Analysing a system to find what your users have done, are doing, and want to do
 .divider
 %ul.team.column-container
   %li.column-one-fourth
-    / Image
-    .image-wrapper
-      %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-    / Title
-    %h3 Chief Whitecloud
-    / Excerpt
-    %p It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.
-    / Social
-    %ul.social
-      %li
-        %a{href: "#"}
-          %i.fa.fa-linkedin-square
-          .tooltip LinkedIn
-      %li
-        %a{href: "#"}
-          %i.fa.fa-facebook
-          .tooltip Facebook
-      %li
-        %a{href: "#"}
-          %i.fa.fa-twitter
-          .tooltip Twitter
-      %li
-        %a{href: "#"}
-          %i.fa.fa-google-plus
-          .tooltip Google+
   %li.column-one-fourth
-    / Image
-    .image-wrapper
-      %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-    / Title
-    %h3 Paul Hembry
-    / Excerpt
-    %p It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.
-    / Social
-    %ul.social
-      %li
-        %a{href: "#"}
-          %i.fa.fa-linkedin-square
-          .tooltip LinkedIn
-      %li
-        %a{href: "#"}
-          %i.fa.fa-facebook
-          .tooltip Facebook
-      %li
-        %a{href: "#"}
-          %i.fa.fa-twitter
-          .tooltip Twitter
-      %li
-        %a{href: "#"}
-          %i.fa.fa-google-plus
-          .tooltip Google+
+    = render 'about_graham'    
   %li.column-one-fourth
-    / Image
-    .image-wrapper
-      %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-    / Title
-    %h3 Lewis Hamilton
-    / Excerpt
-    %p It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.
-    / Social
-    %ul.social
-      %li
-        %a{href: "#"}
-          %i.fa.fa-linkedin-square
-          .tooltip LinkedIn
-      %li
-        %a{href: "#"}
-          %i.fa.fa-facebook
-          .tooltip Facebook
-      %li
-        %a{href: "#"}
-          %i.fa.fa-twitter
-          .tooltip Twitter
-      %li
-        %a{href: "#"}
-          %i.fa.fa-google-plus
-          .tooltip Google+
-  %li.column-one-fourth
-    / Image
-    .image-wrapper
-      %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-    / Title
-    %h3 Martin Whitmarsh
-    / Excerpt
-    %p It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.
-    / Social
-    %ul.social
-      %li
-        %a{href: "#"}
-          %i.fa.fa-linkedin-square
-          .tooltip LinkedIn
-      %li
-        %a{href: "#"}
-          %i.fa.fa-facebook
-          .tooltip Facebook
-      %li
-        %a{href: "#"}
-          %i.fa.fa-twitter
-          .tooltip Twitter
-      %li
-        %a{href: "#"}
-          %i.fa.fa-google-plus
-          .tooltip Google+
+    = render 'about_yuliya'
