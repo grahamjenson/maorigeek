@@ -1,7 +1,11 @@
 Maorigeek::Application.routes.draw do
+  resources :gists
+
   devise_for :users
   
   mount GhostTrain::Engine, at: "/ghost"
+  get 'users/:id' => 'users#profile', :as => :user_profile
+
   root to: 'home#home'
   get 'index' => 'home#home'
   get 'home' => 'home#home', as: 'home'

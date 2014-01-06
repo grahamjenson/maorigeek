@@ -1,0 +1,19 @@
+%h1 Listing gists
+
+%table
+  %tr
+    %th
+    %th
+    %th
+    %th
+
+  - @gists.each do |gist|
+    %tr
+      %th= gist.gist_id
+      %td= link_to 'Show', gist
+      %td= link_to 'Edit', edit_gist_path(gist)
+      %td= link_to 'Destroy', gist, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gist', new_gist_path

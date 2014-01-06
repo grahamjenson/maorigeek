@@ -1,3 +1,4 @@
+
 - content_for(:title, 'Home')
 - content_for(:tab, 'home')
 - content_for :banner do
@@ -55,6 +56,8 @@
           %a.button.transparent{href: contact_path}
             %i.fa.fa-envelope>
             Contact Us Now
+
+
 .column-container
   .column-one-third
     .icons-column
@@ -84,7 +87,7 @@
   .next
 .carousel
   %ul#portfolio-carousel.slider-container
-    - for i in (1..10)
+    - for i in @recent_gists
       %li.column-one-fourth.portfolio-item.branding
         = render partial: 'portfolio_item'
 .column-container
@@ -96,7 +99,7 @@
       .next
     .carousel
       %ul#blog-carousel.slider-container
-        - for i in (1..10)  
+        - for post in @recent_posts
           = render partial: 'blog_post_stub'
   .column-one-fourth
     .divider

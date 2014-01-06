@@ -1,0 +1,6 @@
+%li.content{:class => (params[:controller] == 'ghost_train/ghost' ? 'active' : '')}
+  = link_to 'Content' , ghost_train.posts_path
+%li.editor{:class => (params[:controller] == 'gists' ? 'active' : '')}
+  = link_to main_app.gists_path do
+    %i.fa.fa-li.fa-github-alt
+    Gists
