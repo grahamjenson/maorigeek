@@ -15,5 +15,7 @@
 //= require basix
 //= require customizations
 //= require ghost_train/front_markdown
+//= require gists
+//= require posts
 //= require_tree .
 

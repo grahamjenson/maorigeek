@@ -15,4 +15,5 @@ Maorigeek::Application.routes.draw do
   get 'blog' => 'home#blog', as: 'blog'
   get 'post/:id' => 'home#post', as: 'post'
   get 'portfolio' => 'home#portfolio', as: 'portfolio'
+  get 'portfolio/:id' => 'home#portfolio_item', as: 'portfolio_item'
 end

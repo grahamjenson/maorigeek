@@ -49,8 +49,11 @@ $(window).load(function(){
 	// Reload Slider on Resize
 	// --------------------------- //
 	$(window).resize(function(){
-		testimonials_slider.destroySlider();
-		loadSlider();
+		if(testimonials_slider.destroySlider)
+		{
+			testimonials_slider.destroySlider();
+			loadSlider();
+		}
 	});
 
 });

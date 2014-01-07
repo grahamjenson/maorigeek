@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def home
     @recent_posts = Post.recent
+    @recent_gists = Gist.recent
   end
 
   def about
@@ -17,6 +18,11 @@ class HomeController < ApplicationController
   end
 
   def portfolio
+  end
+
+  def portfolio_item
+    @gist = Gist.find(params[:id])
+    @related_gists = @gist.find_related_tags
   end
 
   def blog

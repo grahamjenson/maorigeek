@@ -15,7 +15,6 @@ class Post < ActiveRecord::Base
 
   state_machine :initial => :draft do
 
-
     state :published do
     end
 

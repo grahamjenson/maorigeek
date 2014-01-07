@@ -87,9 +87,9 @@
   .next
 .carousel
   %ul#portfolio-carousel.slider-container
-    - for i in @recent_gists
+    - for gist in @recent_gists
       %li.column-one-fourth.portfolio-item.branding
-        = render partial: 'portfolio_item'
+        = render partial: 'portfolio_item_stub', :locals => {:gist => gist}
 .column-container
   .column-three-qtr
     .divider
@@ -100,7 +100,7 @@
     .carousel
       %ul#blog-carousel.slider-container
         - for post in @recent_posts
-          = render partial: 'blog_post_stub'
+          = render partial: 'blog_post_stub', :locals => {:post => post}
   .column-one-fourth
     .divider
     %h3.section-title Testimonials

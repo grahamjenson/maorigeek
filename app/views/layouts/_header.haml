@@ -21,15 +21,15 @@
     %ul.topnav
       - tab = yield(:tab)
       %li
-        %a{href: "index.html", class: (tab == 'home' ? 'current' : '')} Home
+        %a{href: root_path, class: (tab == 'home' ? 'current' : '')} Home
       %li
-        %a{href: "about.html", class: (tab == 'about' ? 'current' : '')} About Us
+        %a{href: about_path, class: (tab == 'about' ? 'current' : '')} About Us
       %li
-        %a{href: "portfolio.html", class: (tab == 'portfolio' ? 'current' : '')} Portfolio
+        %a{href: portfolio_path, class: (tab == 'portfolio' ? 'current' : '')} Portfolio
       %li
-        %a{href: "blog.html", class: (tab == 'blog' ? 'current' : '')} Blog
+        %a{href: blog_path, class: (tab == 'blog' ? 'current' : '')} Blog
       %li
-        %a{href: "contact.html", class: (tab == 'contact' ? 'current' : '')} Contact Us
+        %a{href: contact_path, class: (tab == 'contact' ? 'current' : '')} Contact Us
     %a.mobilenav-click{href: "#"}
       .mobilenav-button-container
         .mobilenav-button-inner

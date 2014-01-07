@@ -4,15 +4,13 @@
   %h1 Some of our latest work
   .portfolio-filtering
     %ul#portfolio-filters
+      - gist_tags = Gist.tags
       %li
-        %span.filter.active{"data-filter" => "branding coding identity"} Show all
-      %li
-        %span.filter{"data-filter" => "branding"} Branding
-      %li
-        %span.filter{"data-filter" => "coding"} Coding
-      %li
-        %span.filter{"data-filter" => "identity"} Identity
+        %span.filter.active{"data-filter" => gist_tags.map(&:uuid).join(' ')} Show all
+      - for tag in gist_tags
+        %li
+          %span.filter{"data-filter" => tag.uuid}= tag.name
 %ul#portfolio.column-container.grid
-  - for i in (1..10)
-    %li.column-one-fourth.portfolio-item.branding
-      = render partial: 'portfolio_item'
+  - for g in Gist.all
+    %li.column-one-fourth.portfolio-item{class: g.tags.map(&:uuid).join(' ')}
+      = render partial: 'portfolio_item_stub', locals: {gist: g}

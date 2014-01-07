@@ -1,3 +1,5 @@
 class GistSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :gist_id
+
+  has_many :tags
 end

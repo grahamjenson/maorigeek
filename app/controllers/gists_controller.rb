@@ -70,6 +70,6 @@ class GistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gist_params
-      params.require(:gist).permit(:gist_id)
+      params.require(:gist).permit(:gist_id, :tag_list)
     end
 end

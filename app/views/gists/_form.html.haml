@@ -6,5 +6,6 @@
         - @gist.errors.full_messages.each do |msg|
           %li= msg
   = f.text_field :gist_id
+  = f.text_field :tag_list
   .actions
     = f.submit 'Save'
