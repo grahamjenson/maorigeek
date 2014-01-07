@@ -1,4 +1,3 @@
-
 - content_for(:title, 'Home')
 - content_for(:tab, 'home')
 - content_for :banner do
@@ -100,7 +99,8 @@
     .carousel
       %ul#blog-carousel.slider-container
         - for post in @recent_posts
-          = render partial: 'blog_post_stub', :locals => {:post => post}
+          %li.column-one-fourth
+            = render partial: 'blog_post_stub', :locals => {:post => post}
   .column-one-fourth
     .divider
     %h3.section-title Testimonials

@@ -13,7 +13,7 @@ Maorigeek::Application.routes.draw do
   get 'contact' => 'home#contact', as: 'contact'
   post 'contact' => 'home#contact_form_submit', as: 'contact_form'
   get 'blog' => 'home#blog', as: 'blog'
-  get 'post/:id' => 'home#post', as: 'post'
+  get 'post/:slug' => 'home#post', as: 'post'
   get 'portfolio' => 'home#portfolio', as: 'portfolio'
   get 'portfolio/:id' => 'home#portfolio_item', as: 'portfolio_item'
 end

@@ -1,0 +1,31 @@
+.sidebar-widget.categories
+  / Title
+  %h3 Blog Categories
+  / Category Links
+  %a{href: "#"} Social Networking
+  %a{href: "#"} Grade-A Online Marketing
+  %a{href: "#"} Portable Computing
+  %a{href: "#"} Online Merchandising
+.sidebar-widget.search
+  / Title
+  %h3 Blog Search
+  / Search Form
+  %form{action: "#", method: "get", name: "blog-search"}
+    .container
+      / Textbox
+      %input#blog-search{name: "blog-search", placeholder: "Type and hit enter", type: "text"}/
+      / Search Button
+      %input#go.go{type: "submit", value: ""}/
+.sidebar-widget.project
+  / Title
+  %h3 Latest Project
+  / Image
+  = render partial: 'portfolio_item_stub', locals: {gist: @latest_project}
+.sidebar-widget.posts
+  / Title
+  - post_list = @popular_posts || @related_posts
+
+  %h3= @popular_posts.present? ? 'Popular Posts' : 'Related Posts'
+  - for post in post_list
+    .post
+      = render partial: 'blog_post_stub', :locals => {:post => post}

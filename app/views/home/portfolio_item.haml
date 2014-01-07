@@ -1,32 +1,32 @@
 .gist{'data-gist_id' => @gist.gist_id}
   .relative
     %h1.js-gist-description
-  .column-container
-    .column-three-qtr
-      .js-gist-display.full-width
-        %iframe.full-width{src: 'http://bl.ocks.org/grahamjenson/raw/8168431/', scrolling: 'no', style:'width: 100%; height: 300px'}
-    .column-one-fourth.portfolio-details
-      .js-gist-markdown
-      %a.button.accent{href: "#"}
-        %i.fa.fa-external-link
-        Visit Gist
-      %br
-      %a.button.accent{href: "#"}
-        %i.fa.fa-external-link
-        Visit bl.ock
+  
+  .js-gist-display.full-width
+  %br
+  .js-gist-markdown
+  %br
+  %a.button.accent{href: "#"}
+    %i.fa.fa-external-link
+    Visit Gist
 
-      .portfolio-tags
-        .portfolio-tags-title Tags:
-        = @gist.tags.map(&:name).join(', ')
+  %a.button.accent{href: "#"}
+    %i.fa.fa-external-link
+    Visit bl.ock
 
-.divider
-%h3.section-title Related Work
+  .portfolio-tags
+    .portfolio-tags-title Tags:
+    = @gist.tags.map(&:name).join(', ')
 
-#portfolio-nav.carousel-nav
-  .back
-  .next
-.carousel
-  %ul#portfolio-carousel.slider-container
-    - for g in @related_gists
-      %li.column-one-fourth.portfolio-item
-        = render partial: 'portfolio_item_stub', locals: {gist: g}
+- if not @related_items.empty?
+  .divider
+  %h3.section-title Related Work
+
+  #portfolio-nav.carousel-nav
+    .back
+    .next
+  .carousel
+    %ul#portfolio-carousel.slider-container
+      - for g in @related_gists
+        %li.column-one-fourth.portfolio-item
+          = render partial: 'portfolio_item_stub', locals: {gist: g}

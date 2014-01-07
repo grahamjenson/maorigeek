@@ -2,74 +2,10 @@
 - content_for(:tab, 'blog')
 .column-container
   .column-three-qtr
-    - for i in (1..3)
-      = render 'blog_post_item'
+    - for post in @posts
+      = render :partial => 'blog_post_preview', locals: {post: post}
     .blog-nav
       %a.back{href: "#"} Older Entries
       %a.next{href: "#"} Newer Entries
   .column-one-fourth.sidebar
-    / ~~~~~~~~~~~~~~~~~
-    / Categories
-    / ~~~~~~~~~~~~~~~~~
-    .sidebar-widget.categories
-      / Title
-      %h3 Blog Categories
-      / Category Links
-      %a{href: "#"} Social Networking
-      %a{href: "#"} Grade-A Online Marketing
-      %a{href: "#"} Portable Computing
-      %a{href: "#"} Online Merchandising
-    .sidebar-widget.search
-      / Title
-      %h3 Blog Search
-      / Search Form
-      %form{action: "#", method: "get", name: "blog-search"}
-        .container
-          / Textbox
-          %input#blog-search{name: "blog-search", placeholder: "Type and hit enter", type: "text"}/
-          / Search Button
-          %input#go.go{type: "submit", value: ""}/
-    .sidebar-widget.project
-      / Title
-      %h3 Latest Project
-      / Image
-      = render partial: 'portfolio_item'
-    .sidebar-widget.posts
-      / Title
-      %h3 Popular Posts
-      .post
-        / Image Column
-        .img-column
-          %a.image-link.mini{href: "blog-post.html"}
-            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
-        / Content Column
-        .content-column
-          / Post Title
-          %h3.sub-title
-            %a{href: "blog-post.html"} Lorem Ipsum is simply dummy text of the printing
-          / Date
-          .date 14 December 2011
-      .post
-        / Image Column
-        .img-column
-          %a.image-link.mini{href: "blog-post.html"}
-            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
-        / Content Column
-        .content-column
-          / Post Title
-          %h3.sub-title
-            %a{href: "blog-post.html"} Super awesome blog page title
-          / Date
-          .date 14 December 2011
-      .post
-        / Image Column
-        .img-column
-          %a.image-link.mini{href: "blog-post.html"}
-            %img.fullwidth{alt: "", src: "images/placeholders/placeholder-mini.jpg"}/
-        / Content Column
-        .content-column
-          / Post Title
-          %h3.sub-title
-            %a{href: "blog-post.html"} The standard chunk of Lorem Ipsum used since...
-          / Date
-          .date 14 December 2011
+    = render :partial => 'blog_sidebar'    

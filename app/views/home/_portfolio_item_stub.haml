@@ -2,7 +2,7 @@
 - link = portfolio_item_path(gist)
 .gist{'data-gist_id' => gist.gist_id}
   %a.image-link{href: link}
-    %img.js-gist-thumbnail.fullwidth{alt: "", src: default_image }/
+    %img.js-gist-thumbnail.fullwidth{alt: "", src: default_image }
   %h3
     %a.js-gist-description{href: link}
   .tags= gist.tags.map(&:name).join(', ')

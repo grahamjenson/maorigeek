@@ -51,18 +51,20 @@
       .footer-lower-container
         %ul.footer-lower
           %li
-            %a{href: "index.html"} Home
+            %a{href: root_path} Home
           %li
-            %a{href: "about.html"} About Us
+            %a{href: about_path} About Us
           %li
-            %a{href: "portfolio.html"} Portfolio
+            %a{href: portfolio_path} Portfolio
           %li
-            %a{href: "blog.html"} Blog
+            %a{href: blog_path} Blog
           %li
-            %a{href: "contact.html"} Contact Us
+            %a{href: contact_path} Contact Us
         .footer-copyright
+          Powered with the help of 
+          %a{href: 'https://github.com/TryGhost/Ghost'} Ghost
+          |
           Copyright © 2013
-          = succeed "." do
-            %a{href: "http://www.artivity.co.uk", target: "_blank"} Artivity
+          %a{href: "http://www.artivity.co.uk", target: "_blank"} Artivity
       %a.top-of-page-link{href: "#"}
         %i.fa.fa-chevron-up

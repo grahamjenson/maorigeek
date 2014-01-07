@@ -1,8 +1,8 @@
-%li.column-one-fourth
-  %a.image-link{href: "blog-post.html"}
-    %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
-  %h3
-    %a{href: "blog-post.html"} Lorem Ipsum is simply dummy text of the printing
-  .date 12th June 2013
-  %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of ...
-  %a{href: "blog-post.html"} Read More
+- default_image= asset_path('placeholders/placeholder-large.jpg')
+%a.image-link{href: post_path(post.slug)}
+  %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
+%h3
+  %a{href: post_path(post.slug)}= post.title
+- date = post.published_at
+.date= post.published_at.strftime("#{date.day.ordinalize} %B %Y")
+.tags= post.tags.map(&:name).join(', ')

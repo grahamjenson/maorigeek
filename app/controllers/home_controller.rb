@@ -26,10 +26,14 @@ class HomeController < ApplicationController
   end
 
   def blog
-    @recent_posts = Post.recent
+    @posts = Post.recent
+    @popular_posts = @posts
+    @latest_project = Gist.last
   end
 
   def post
-    @post = Post.find(params)
+    @post = Post.find_by_slug(params[:slug])
+    @latest_project = Gist.last
+    @related_posts = @post.find_related_tags.published
   end
 end
