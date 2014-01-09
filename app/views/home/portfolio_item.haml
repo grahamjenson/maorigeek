@@ -6,6 +6,8 @@
   %br
   .js-gist-markdown
   %br
+  = render :partial => 'share_block'
+  %br
   %a.button.accent{href: "#"}
     %i.fa.fa-external-link
     Visit Gist
@@ -18,6 +20,8 @@
     .portfolio-tags-title Tags:
     = @gist.tags.map(&:name).join(', ')
 
+
+
 - if not @related_items.empty?
   .divider
   %h3.section-title Related Work
@@ -27,6 +31,12 @@
     .next
   .carousel
     %ul#portfolio-carousel.slider-container
-      - for g in @related_gists
+      - for g in @related_items
         %li.column-one-fourth.portfolio-item
           = render partial: 'portfolio_item_stub', locals: {gist: g}
+
+
+
+.divider
+.comments
+  = render partial: 'disqus'

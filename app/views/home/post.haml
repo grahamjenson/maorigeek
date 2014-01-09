@@ -1,25 +1,9 @@
 .column-container
   .column-three-qtr
     = render :partial => 'post', locals: {post: @post, :preview => false}
-    %ul.post-sharing
-      %li
-        %a{href: "#"}
-          %i.fa.fa-facebook
-          .tooltip Share on Facebook
-      %li
-        %a{href: "#"}
-          %i.fa.fa-twitter
-          .tooltip Share on Twitter
-      %li
-        %a{href: "#"}
-          %i.fa.fa-linkedin-square
-          .tooltip Share on LinkedIn
-      %li
-        %a{href: "#"}
-          %i.fa.fa-google-plus
-          .tooltip Share on Google+
+    = render :partial => 'share_block'
     .divider
     .comments
-      %h2 Reader Comments
+    = render partial: 'disqus'
   .column-one-fourth.sidebar
     = render :partial => 'blog_sidebar'
