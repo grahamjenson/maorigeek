@@ -1,8 +1,7 @@
 - default_image= asset_path('placeholders/placeholder-large.jpg')
 %a.image-link{href: post_path(post.slug)}
-  %img.fullwidth{alt: "", src: "assets/placeholders/placeholder-large.jpg"}/
+  %img.fullwidth{alt: "", src: (post.thumbnail.thumb.present? ? post.thumbnail.thumb.url : "assets/placeholders/placeholder-large.jpg") }
 %h3
   %a{href: post_path(post.slug)}= post.title
-- date = post.published_at
-.date= post.published_at.strftime("#{date.day.ordinalize} %B %Y")
+.date= post.pretty_published_at_date
 .tags= post.tags.map(&:name).join(', ')

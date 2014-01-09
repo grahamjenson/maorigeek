@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 
   def portfolio_item
     @gist = Gist.find(params[:id])
-    @related_gists = @gist.find_related_tags
+    @related_items = @gist.find_related_tags.all
   end
 
   def blog

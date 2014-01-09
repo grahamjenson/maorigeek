@@ -1,35 +1,6 @@
 .column-container
   .column-three-qtr
-    .blog-post.actual-post
-      %h1 Super awesome blog page title
-      .blog-meta
-        .meta-item
-          .meta-title.published Date:
-          %a{href: "#"} 14th January 2013
-        .meta-item
-          .meta-title.views Views:
-          %a{href: "#"} 9
-        .meta-item
-          .meta-title.comments Comments:
-          %a{href: "#"} 2
-        .meta-item
-          .meta-title.tags Tags:
-          = succeed "," do
-            %a{href: "#"} amazing
-          %a{href: "#"} badass
-      .blog-content
-        %p The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-        .media
-          #portfolio-blog-slider-container
-            #portfolio-blog-slider
-              %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large.jpg"}/
-              %img.fullwidth{alt: "", src: "images/placeholders/placeholder-large-2.jpg"}/
-            .portfolio-blog-slider-controls
-              #portfolio-blog-slider-prev
-              #portfolio-blog-slider-next
-        %h3 Where does it come from?
-        %p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-        %p Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    = render :partial => 'post', locals: {post: @post, :preview => false}
     %ul.post-sharing
       %li
         %a{href: "#"}
@@ -43,10 +14,6 @@
         %a{href: "#"}
           %i.fa.fa-linkedin-square
           .tooltip Share on LinkedIn
-      %li
-        %a{href: "#"}
-          %i.fa.fa-pinterest
-          .tooltip Share on Pinterest
       %li
         %a{href: "#"}
           %i.fa.fa-google-plus

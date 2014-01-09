@@ -1,0 +1,19 @@
+.blog-post.post{'data-markdown' => post.markdown , :class => (preview ? '' : 'actual-post' )}
+  %h1
+    %a{href: post_path(post.slug)}= post.title
+  .blog-meta
+    .meta-item
+      .meta-title.published Date:
+      %a{href: "#"}
+        = post.pretty_published_at_date
+    .meta-item
+      .meta-title.tags Tags:
+      - post.tags.each do |tag|
+        %a{href: "#"}= tag.name
+  .blog-content
+    - if preview
+      .js-post-markdown-preview
+      %a.button.accent{href: post_path(post.slug)} Continue Reading
+    - else
+      .js-post-markdown
+    

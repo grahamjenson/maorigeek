@@ -4,6 +4,8 @@ Maorigeek::Application.routes.draw do
   devise_for :users
   
   mount GhostTrain::Engine, at: "/ghost"
+  get '/admin', to: redirect('/ghost')
+  
   get 'users/:id' => 'users#profile', :as => :user_profile
 
   root to: 'home#home'

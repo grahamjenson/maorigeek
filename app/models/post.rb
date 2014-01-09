@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   acts_as_taggable
 
+  mount_uploader :thumbnail, ThumbnailUploader
+
   before_create :create_uuid
   before_save :generate_slug
 
@@ -51,6 +53,9 @@ class Post < ActiveRecord::Base
       self.uuid = SecureRandom.uuid # or whatever you chose like UUID tools
   end
 
+  def pretty_published_at_date
+    published_at.strftime("#{published_at.day.ordinalize} %B %Y")
+  end
 
 
 end

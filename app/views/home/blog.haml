@@ -3,7 +3,7 @@
 .column-container
   .column-three-qtr
     - for post in @posts
-      = render :partial => 'blog_post_preview', locals: {post: post}
+      = render :partial => 'post', locals: {post: post, :preview => true}
     .blog-nav
       %a.back{href: "#"} Older Entries
       %a.next{href: "#"} Newer Entries

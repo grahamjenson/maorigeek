@@ -12,6 +12,7 @@ gem 'acts-as-taggable-on'
 gem 'slugorize'
 
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'state_machine'
 
 # Use SCSS for stylesheets
