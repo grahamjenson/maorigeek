@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
+gem 'thin'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -14,7 +15,8 @@ gem 'acts-as-taggable-on'
 gem 'slugorize'
 
 gem 'carrierwave'
-gem 'mini_magick'
+gem "fog", "~> 1.3.1"
+
 gem 'state_machine'
 
 # Use SCSS for stylesheets
@@ -35,7 +37,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
-gem 'ghost_train', path: "../ghost_train"
+gem 'ghost_train', path: "../ghost_train", git: 'git://github.com/grahamjenson/ghost_train.git', :submodules => true
 gem "active_model_serializers"
 
 gem "font-awesome-rails"
