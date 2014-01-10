@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/grahamjenson/ghost_train.git
-  revision: a64de056d899e2ac6e82ad0d3afbc61e16a43093
+  revision: 0e70c424ff4316990c507ae1cb5af187ac6a502d
   submodules: true
   specs:
     ghost_train (0.0.1)
@@ -91,7 +91,7 @@ GEM
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
-    haml (4.0.4)
+    haml (4.0.5)
       tilt
     haml-rails (0.5.3)
       actionpack (>= 4.0.1)
@@ -131,7 +131,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     minitest (4.7.5)
-    multi_json (1.8.2)
+    multi_json (1.8.4)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.8)
