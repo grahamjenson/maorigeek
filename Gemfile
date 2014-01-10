@@ -19,6 +19,7 @@ gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 
 gem 'state_machine'
+gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
