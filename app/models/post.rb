@@ -2,8 +2,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
   acts_as_taggable
 
-  mount_uploader :thumbnail, ThumbnailUploader
-
   before_create :create_uuid
   before_save :generate_slug
 

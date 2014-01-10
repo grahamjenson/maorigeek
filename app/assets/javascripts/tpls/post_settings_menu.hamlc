@@ -1,0 +1,24 @@
+%form
+  %table.plain
+    %tr.post-setting
+      %td.post-setting-label
+        %label{for: "url"} URL
+      %td.post-setting-field
+        %input#url.post-setting-slug{placeholder: "", type: "text", value: ""}
+    %tr.post-setting
+      %td.post-setting-label
+        %label{for: "pub-date"} Pub Date
+      %td.post-setting-field
+        %input#pub-date.post-setting-date{placeholder: "Now", type: "text", value: ""}
+    %tr.post-setting
+      %td.post-setting-label
+        %span.label Thumbnail Image
+      %td.post-setting-item
+        .js-thumbnail-upload{id: @id}
+          - if @thumbnail
+            %a.js-post-thumbnail{href: "#"}
+              %img{src: @thumbnail, alt: "logo"}
+          - else
+            %a.button-add.js-post-thumbnail
+              Upload Image
+  %a.delete{href: "#"} Delete This Post

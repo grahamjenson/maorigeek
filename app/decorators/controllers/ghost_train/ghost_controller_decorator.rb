@@ -46,7 +46,7 @@ GhostTrain::GhostController.class_eval do
     handle_tag_list(post, tag_list)
 
 
-    params = params.permit(:title, :markdown, :state)
+    params = params.permit(:title, :markdown, :state, :thumbnail)
     post.assign_attributes(params)
     
     post

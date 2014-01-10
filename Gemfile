@@ -8,6 +8,8 @@ gem 'pg'
 
 
 gem 'haml-rails'
+gem 'haml_coffee_assets'
+
 gem 'acts-as-taggable-on'
 gem 'slugorize'
 

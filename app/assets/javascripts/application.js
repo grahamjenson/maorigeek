@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require basix
-//= require customizations
 //= require ghost_train/front_markdown
 //= require gists
 //= require posts
