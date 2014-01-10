@@ -5,7 +5,6 @@ $ ->
     
     $.when($.get("https://api.github.com/gists/#{gist_id}"))
     .done((gist) -> 
-      console.log gist
       #description
       $(obj).find('.js-gist-description').html(gist.description)
       
@@ -16,7 +15,6 @@ $ ->
       
       #handle gist display
       if gist.files['index.html'] && $(obj).find('.js-gist-display').length > 0
-        console.log 'dis'
         $(obj).find('.js-gist-display').html("<iframe scrolling='no' src='http://bl.ocks.org/grahamjenson/raw/#{gist_id}/' style='width: 100%; height: 350px'></iframe>")
         
 

@@ -33,4 +33,3 @@ Ghost.View.PostSettings.prototype.showUploadThumb = () ->
 Ghost.View.PostSettings.prototype.events['click .js-post-thumbnail'] = 'showUploadThumb'
 
 
-console.log 'customizatasfsafasions'
