@@ -3,10 +3,6 @@ GIT
   revision: a64de056d899e2ac6e82ad0d3afbc61e16a43093
   submodules: true
   specs:
-
-PATH
-  remote: ../ghost_train
-  specs:
     ghost_train (0.0.1)
       bourbon
       haml-rails

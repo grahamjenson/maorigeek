@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
-gem 'ghost_train', path: "../ghost_train", git: 'git://github.com/grahamjenson/ghost_train.git', :submodules => true
+gem 'ghost_train', git: 'git://github.com/grahamjenson/ghost_train.git', :submodules => true
 gem "active_model_serializers"
 
 gem "font-awesome-rails"
