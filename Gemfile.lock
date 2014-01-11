@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/grahamjenson/ghost_train.git
-  revision: 35492ff784e105f01486822e165d59c6aca79bc8
+  revision: 19b383808c39bd14ee63c56294e84db67e0cc333
   branch: master
   submodules: true
   specs:
