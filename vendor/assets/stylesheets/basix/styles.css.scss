@@ -434,7 +434,7 @@ a.image-link:hover:after {
 }
 .dark-bg .main-container, .dark-bg .client-logos-title span {
   background-color: #2e3137;
-  background-image: url(/assets/dark-footer-overlay.png);
+  background-image: asset-url("dark-footer-overlay.png");
 }
 @media only screen and (min-width: 1059px) {
   body.contained {
@@ -510,11 +510,11 @@ body.home .main-content-inner {
 /* -------------------------------- */
 .topbar-outer.dark {
   background-color: #2e3137;
-  background-image: url(/assets/topbar/30-percent-dark.png);
+  background-image: asset-url("topbar/30-percent-dark.png");
 }
 body.home .topbar-outer.dark {
   background-color: transparent;
-  background-image: url(/assets/topbar/30-percent-dark.png);
+  background-image: asset-url("topbar/30-percent-dark.png");
 }
 /* -------------------------------- */
 /* Logo
@@ -670,7 +670,7 @@ body.home .topbar-outer.dark {
   position: absolute;
   left: 22px;
   background-color: #2e3137;
-  background-image: url(../images/topbar/30-percent-dark.png);
+  background-image: asset-url("topbar/30-percent-dark.png");
   z-index: 99999;
   -webkit-border-bottom-left-radius: 2px;
   -webkit-border-bottom-right-radius: 2px;
@@ -1193,7 +1193,7 @@ body.home .topbar-outer.dark {
   background-color: #2e3137;
   border-bottom: 0;
   color: #ffffff;
-  background-image: url(../images/8-percent-white.png);
+  background-image: asset-url("8-percent-white.png");
 }
 /* --------------------------------------------------------------------------------- */
 /* Home Page Testimonials
@@ -1731,13 +1731,13 @@ ul.topsocial .tooltip:after {
   cursor: pointer;
 }
 .alert.red span.close {
-  background-image: url(../images/alert-close-red.png);
+  background-image: asset-url("alert-close-red.png");
 }
 .alert.amber span.close {
-  background-image: url(../images/alert-close-amber.png);
+  background-image: asset-url("alert-close-amber.png");
 }
 .alert.green span.close {
-  background-image: url(../images/alert-close-green.png);
+  background-image: asset-url("alert-close-green.png");
 }
 /* -------------------------------- */
 /* Columns
@@ -2670,7 +2670,7 @@ i {
 .light-bg .footer {
   color: rgba(255,255,255,0.6);
   background-color: #2e3137;
-  background-image: url(/assets/dark-footer-overlay.png);
+  background-image: asset-url("dark-footer-overlay.png");
 }
 .dark-bg .footer {
   color: #6f6f6f;
