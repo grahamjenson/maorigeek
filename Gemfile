@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
+gem 'thin'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -14,8 +16,10 @@ gem 'acts-as-taggable-on'
 gem 'slugorize'
 
 gem 'carrierwave'
-gem 'mini_magick'
+gem "fog", "~> 1.3.1"
+
 gem 'state_machine'
+gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

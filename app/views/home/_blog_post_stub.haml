@@ -1,6 +1,6 @@
 - default_image= asset_path('placeholders/placeholder-large.jpg')
 %a.image-link{href: post_path(post.slug)}
-  %img.fullwidth{alt: "", src: (post.thumbnail.present? ? post.thumbnail : "assets/placeholders/placeholder-large.jpg") }
+  %img.fullwidth{alt: "", src: (post.thumbnail.present? ? post.thumbnail : asset_path('placeholders/placeholder-large.jpg') )}
 %h3
   %a{href: post_path(post.slug)}= post.title
 .date= post.pretty_published_at_date
