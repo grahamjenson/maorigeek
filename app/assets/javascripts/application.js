@@ -16,5 +16,4 @@
 //= require ghost_train/front_markdown
 //= require gists
 //= require posts
-//= require_tree .
 
