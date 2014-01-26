@@ -8,7 +8,7 @@ GhostTrain::GhostController.class_eval do
   end
 
   def get_posts
-    Post.all.map{|x| GhostPostSerializer.new(x)}.to_json
+    Post.all.order('updated_at DESC').map{|x| GhostPostSerializer.new(x)}.to_json
   end
 
   def get_tags
