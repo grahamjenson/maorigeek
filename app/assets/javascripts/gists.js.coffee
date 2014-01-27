@@ -15,7 +15,7 @@ $ ->
       
       #handle gist display
       if gist.files['index.html'] && $(obj).find('.js-gist-display').length > 0
-        $(obj).find('.js-gist-display').html("<iframe scrolling='no' src='http://bl.ocks.org/grahamjenson/raw/#{gist_id}/' style='width: 100%; height: 350px'></iframe>")
+        $(obj).find('.js-gist-display').html("<iframe scrolling='no' src='http://bl.ocks.org/grahamjenson/raw/#{gist_id}/' style='width: 100%; height: 502px'></iframe>")
         
 
       #handle gist markdown
