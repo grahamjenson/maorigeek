@@ -1,10 +1,10 @@
 GIT
   remote: git://github.com/grahamjenson/ghost_train.git
-  revision: f208b3f4f362ef56912833e8f09355090c615a6d
+  revision: df8e66155f1e8e4efa07bf3ff9b43c3d93d544c2
   branch: master
   submodules: true
   specs:
-    ghost_train (0.0.2)
+    ghost_train (0.0.3)
       bourbon
       haml-rails
       handlebars-rails

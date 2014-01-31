@@ -7,6 +7,7 @@ $ ->
     
     if $(obj).find('.js-post-markdown-preview').length > 0
       md = $(obj).data('markdown')
+      md = md.split(/<!\-*\s*FOLD\s*\-*>/)[0]
       $(obj).find('.js-post-markdown-preview').html(GhostTrain.front_markdown.makeHtml(md))
 
   )
