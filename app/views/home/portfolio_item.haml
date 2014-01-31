@@ -4,9 +4,14 @@
   
   .js-gist-display.full-width
   %br
-  .js-gist-markdown
+  .js-gist-markdown.reading-content
   %br
-  = render :partial => 'share_block'
+    = render :partial => 'share_block'
+  %hr
+  %h2
+    index.html
+  .js-gist-index
+  %hr
   %br
   %a.button.accent{href: "https://gist.github.com/#{@gist.gist_id}"}
     %i.fa.fa-external-link

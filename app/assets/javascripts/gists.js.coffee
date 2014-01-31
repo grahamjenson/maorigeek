@@ -14,9 +14,14 @@ $ ->
         $(obj).find('.js-gist-thumbnail').attr('src',thumb.raw_url)
       
       #handle gist display
-      if gist.files['index.html'] && $(obj).find('.js-gist-display').length > 0
-        $(obj).find('.js-gist-display').html("<iframe scrolling='no' src='http://bl.ocks.org/grahamjenson/raw/#{gist_id}/' style='width: 100%; height: 502px'></iframe>")
-        
+      if gist.files['index.html'] 
+        if $(obj).find('.js-gist-display').length > 0
+          $(obj).find('.js-gist-display').html("<iframe scrolling='no' src='http://bl.ocks.org/grahamjenson/raw/#{gist_id}/' style='width: 100%; height: 502px'></iframe>")
+        if $(obj).find('.js-gist-index').length > 0
+          code =  gist.files['index.html'].content
+          code = hljs.highlight('html', code).value
+          code = "<pre><code class='html hljs'>#{code}</code></pre>"
+          $(obj).find('.js-gist-index').html(code)
 
       #handle gist markdown
       if gist.files['README.md'] && $(obj).find('.js-gist-markdown').length > 0

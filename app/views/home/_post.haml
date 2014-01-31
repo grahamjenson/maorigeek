@@ -10,7 +10,7 @@
       .meta-title.tags Tags:
       - post.tags.each do |tag|
         %a{href: "#"}= tag.name
-  .blog-content
+  .blog-content.reading-content
     - if preview
       .js-post-markdown-preview
       %a.button.accent{href: post_path(post.slug)} Continue Reading
