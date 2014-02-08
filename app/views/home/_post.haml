@@ -16,4 +16,5 @@
       %a.button.accent{href: post_path(post.slug)} Continue Reading
     - else
       .js-post-markdown
+        != @markdown.render(post.markdown)
     
