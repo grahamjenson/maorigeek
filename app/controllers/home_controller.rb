@@ -36,4 +36,18 @@ class HomeController < ApplicationController
     @latest_project = Gist.last
     @related_posts = @post.find_related_tags.published
   end
+
+  def sitemap
+    headers['Content-Type'] = 'application/xml'
+    last_post = Post.recent.last
+    if stale?(:etag => last_post, :last_modified => last_post.updated_at.utc)
+      respond_to do |format|
+        format.xml do
+          @posts = Post.published
+          @gists = Gist.all
+        end
+      end
+    end    
+  end
+
 end

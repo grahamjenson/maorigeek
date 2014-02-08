@@ -18,4 +18,6 @@ Maorigeek::Application.routes.draw do
   get 'post/:slug' => 'home#post', as: 'post'
   get 'portfolio' => 'home#portfolio', as: 'portfolio'
   get 'portfolio/:id' => 'home#portfolio_item', as: 'portfolio_item'
+
+  get 'sitemap.xml', :to => 'home#sitemap', :defaults => { :format => 'xml' }
 end
