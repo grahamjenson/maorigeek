@@ -36,6 +36,13 @@ class HomeController < ApplicationController
     @latest_project = Gist.last
     @related_posts = @post.find_related_tags.published
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+
+    respond_to do |f|
+      f.html {}
+      f.rss { render layout: false}
+      f.atom { render layout: false}
+    end
+    
   end
 
   def sitemap

@@ -18,6 +18,11 @@
         %a{href: "https://github.com/grahamjenson"}
           %i.fa.fa-github
           .tooltip Github
+      %li
+        %a{href: blog_url(:format => :rss)}
+          %i.fa.fa-rss
+          .tooltip RSS
+
     %ul.topnav
       - tab = yield(:tab)
       %li
