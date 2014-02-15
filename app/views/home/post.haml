@@ -3,6 +3,18 @@
     = render :partial => 'post', locals: {post: @post, :preview => false}
     = render :partial => 'share_block'
     .divider
+    - post_list = @popular_posts || @related_posts
+
+    %h3= @popular_posts.present? ? 'Popular Posts' : 'Related Posts'
+    #blog-nav.carousel-nav
+      .back
+      .next
+    .carousel
+      %ul#blog-carousel.slider-container
+        - for post in post_list
+          %li.column-one-fourth
+            = render partial: 'blog_post_stub', :locals => {:post => post}
+    .divider
     .comments
     = render partial: 'disqus'
   .column-one-fourth.sidebar
