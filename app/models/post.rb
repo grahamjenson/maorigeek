@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   scope :drafts, ->{ where(:state => :draft) }
   scope :published, ->{ where(:state => :published) }
   
-  scope :recent, ->{published.order('created_at DESC')}
+  scope :recent, ->{published.order('published_at DESC')}
   
 
   state_machine :initial => :draft do
@@ -32,6 +32,23 @@ class Post < ActiveRecord::Base
       transition :published => :draft
     end
   end
+
+  def renderer
+     Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+  end
+
+  def rendered_markdown
+    renderer.render(self.markdown)
+  end
+
+  def rendered_description
+    renderer.render(self.description)
+  end
+
+  def description
+    self.markdown.split(/<!\-*\s*FOLD\s*\-*>/)[0]
+  end
+
 
   def unset_published_at_state
     self.published_at = nil

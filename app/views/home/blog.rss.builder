@@ -12,6 +12,13 @@ xml.rss version: "2.0" do
         xml.pubDate p.published_at.to_s(:rfc822)
         xml.link  post_url(p.slug)
         xml.guid post_url(p.slug)
+        xml.media :thumbnail, :url => p.thumbnail, :medium => 'image'
+        xml.media :content, :url => p.thumbnail, :medium => 'image'
+        xml.description :type => 'html' do xml.cdata!(p.rendered_description) end
+        xml.content :type => 'html' do xml.cdata!(p.rendered_markdown) end
+        p.tags.each do |t|
+          xml.category t.name
+        end
       end
     end
   end

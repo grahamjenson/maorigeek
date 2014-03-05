@@ -35,7 +35,7 @@ class HomeController < ApplicationController
     @post = Post.find_by_slug(params[:slug])
     @latest_project = Gist.last
     @related_posts = @post.find_related_tags.published
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+    
 
     respond_to do |f|
       f.html {}

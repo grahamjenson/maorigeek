@@ -4,7 +4,14 @@
     
     %meta{charset: "utf-8"}
     %meta{content: "initial-scale=1", name: "viewport"}
-    %meta(name="google-site-verification" content="0an0BSditp2F6g4D9xw1JksJz_hmn8Ub8BDQjTbBY_4")
+    - if @post
+      %meta{property: 'og:type', content: "article"}
+      %meta{property: 'og:site_name', content: 'maori.geek'}
+      %meta{property: 'og:image', content: @post.thumbnail}
+      %meta{property: 'og:url', content: post_url(@post.slug)}
+      %meta{property: 'og:title', content: @post.title}
+      %meta{property: 'og:description', content: @post.rendered_description}
+
     %title= "maori.geek #{yield(:title)}"
     %link{href: 'http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800', rel: 'stylesheet', type: 'text/css'}
     %link{href: 'http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400', rel: 'stylesheet', type: 'text/css'}
