@@ -16,6 +16,7 @@ gem 'acts-as-taggable-on'
 gem 'slugorize'
 
 gem 'carrierwave'
+gem 'rmagick'
 gem "fog", "~> 1.3.1"
 
 gem 'state_machine'

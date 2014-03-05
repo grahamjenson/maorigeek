@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class GhostUploader < CarrierWave::Uploader::Base
+    include CarrierWave::RMagick
 
     if Rails.env.production?
       storage :fog
