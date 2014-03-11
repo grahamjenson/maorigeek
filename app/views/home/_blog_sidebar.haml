@@ -1,13 +1,20 @@
 .sidebar-widget.search
   / Title
-  %h3 Blog Search
-  / Search Form
-  %form{action: "#", method: "get", name: "blog-search"}
+  %h3 Blog Subscription
+
+  = form_tag(people_path, method: "post", class: 'navbar-form navbar-left') do
     .container
-      / Textbox
-      %input#blog-search{name: "blog-search", placeholder: "Type and hit enter", type: "text"}/
-      / Search Button
-      %input#go.go{type: "submit", value: ""}/
+      %input#blog-search{type: "text", placeholder: 'Email Subscription' , name: 'email'}
+      %input#go.go{type: "submit", value: "\uf003"}
+
+  .inline{style: 'margin-top: 46px; margin-left: 2px;'}
+    %a{href: blog_url(:format => :rss)}
+      %i.fa.fa-rss{style: 'color: #36a582;'}
+    %a{href: "https://twitter.com/grahamjenson"}
+      %i.fa.fa-twitter{style: 'color: #36a582;'}
+  %br
+  %hr
+
 .sidebar-widget.project
   / Title
   %h3 Latest Project

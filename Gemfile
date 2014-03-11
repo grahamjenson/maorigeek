@@ -45,6 +45,7 @@ gem 'devise'
 gem 'ghost_train', git: 'git://github.com/grahamjenson/ghost_train.git', :branch => :master, :submodules => true
 gem "active_model_serializers"
 
+
 gem "font-awesome-rails"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

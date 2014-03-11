@@ -1,0 +1,19 @@
+Hello
+%br
+%br
+
+This email address was used to register at 
+%a{href: 'http://maori.geek.nz', target: '_blank'} 
+  maori geek.
+%br
+
+If you click the link below we promise to only send you a maximum of a few emails a month, and no spam!
+%br
+%br
+%strong  
+  = link_to 'Confirm Subscription', authenticate_email_url(@person.authentication_token)
+
+%br
+Cheers
+%br
+Maori Geek

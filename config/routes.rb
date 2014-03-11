@@ -20,4 +20,8 @@ Maorigeek::Application.routes.draw do
   get 'portfolio/:id' => 'home#portfolio_item', as: 'portfolio_item'
 
   get 'sitemap.xml', :to => 'home#sitemap', :defaults => { :format => 'xml' }
+
+  get 'authenticate/:token', :to => 'people#authenticate_email', as: 'authenticate_email'
+
+  resources :people, :only => :create
 end
