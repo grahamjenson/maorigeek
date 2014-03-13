@@ -3,6 +3,13 @@ GhostTrain::GhostController.class_eval do
   
   protected
 
+  def destroy_post(id)
+
+    post = Post.find(id)
+    post.destroy
+    return post
+  end
+
   def get_uploader
     GhostUploader.new
   end
@@ -48,7 +55,7 @@ GhostTrain::GhostController.class_eval do
 
     params = params.permit(:title, :markdown, :state, :thumbnail)
     post.assign_attributes(params)
-    
+    post.user = current_user
     post
   end
 

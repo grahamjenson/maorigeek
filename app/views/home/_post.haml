@@ -10,6 +10,11 @@
       .meta-title.tags Tags:
       - post.tags.each do |tag|
         %a{href: "#"}= tag.name
+    - name = post.user.try(:name)
+    - if name
+      .meta-item
+        .meta-title.author
+        = "By #{name}"
   .blog-content.reading-content
     - if preview
       .js-post-markdown-preview

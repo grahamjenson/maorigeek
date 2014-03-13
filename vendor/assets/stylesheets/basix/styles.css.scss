@@ -2359,6 +2359,9 @@ i {
 .blog-meta .meta-item .meta-title.comments:before {
   content: '\f086';
 }
+.blog-meta .meta-item .meta-title.author:before {
+  content: '\f007';
+}
 .blog-meta .meta-item .meta-title.tags:before {
   content: '\f02b';
 }

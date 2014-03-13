@@ -15,7 +15,7 @@
       %meta{property: 'og:description', content: @post.rendered_description}
 
     = auto_discovery_link_tag :rss, "/blog.rss"
-    %title= "maori.geek #{yield(:title)}"
+    %title= "#{yield(:title)} -- maori.geek "
     %link{href: 'http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800', rel: 'stylesheet', type: 'text/css'}
     %link{href: 'http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400', rel: 'stylesheet', type: 'text/css'}
     = stylesheet_link_tag    "application", media: "all"
