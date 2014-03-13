@@ -1,11 +1,15 @@
-.blog-post.post{'data-markdown' => post.markdown , :class => (preview ? '' : 'actual-post' )}
+.blog-post.post{itemscope: '', itemtype: "http://schema.org/Article", 'data-markdown' => post.markdown , :class => (preview ? '' : 'actual-post' )}
   %h1
-    %a{href: post_path(post.slug)}= post.title
+    %span{itemprop: "name"}
+      %a{href: post_path(post.slug)}= post.title
+
   .blog-meta
     .meta-item
       .meta-title.published Date:
       %a{href: "#"}
-        = post.pretty_published_at_date
+        %span{itemprop: "datePublished", content: post.published_at.to_date.iso8601}
+          = post.pretty_published_at_date
+
     .meta-item
       .meta-title.tags Tags:
       - post.tags.each do |tag|
@@ -14,8 +18,12 @@
     - if name
       .meta-item
         .meta-title.author
-        = "By #{name}"
-  .blog-content.reading-content
+        = "By"
+        %span{itemprop: "author", itemscope: '' , itemtype: "http://schema.org/Person"}
+          %span{itemprop: "name"}
+            = name
+
+  .blog-content.reading-content{itemprop: "articleBody"}
     - if preview
       .js-post-markdown-preview
       %a.button.accent{href: post_path(post.slug)} Continue Reading
