@@ -7,11 +7,9 @@
       %input#blog-search{type: "text", placeholder: 'Email Subscription' , name: 'email'}
       %input#go.go{type: "submit", value: "\uf003"}
 
-  .inline{style: 'margin-top: 46px; margin-left: 2px;'}
-    %a{href: blog_url(:format => :rss)}
-      %i.fa.fa-rss{style: 'color: #36a582;'}
-    %a{href: "https://twitter.com/grahamjenson"}
-      %i.fa.fa-twitter{style: 'color: #36a582;'}
+  %ul.side-bar.follow-block
+    = render :partial => 'layouts/follow_block'
+
   %br
   %hr
 
