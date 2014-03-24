@@ -6,26 +6,7 @@
           %a{href: root_path}
             %img{alt: "", height: "17", src: asset_path("logos/logo_white.png")}/
     %ul.topsocial
-      %li
-        %a{href: "http://www.linkedin.com/pub/graham-jenson/6/a93/b07"}
-          %i.fa.fa-linkedin-square
-          .tooltip LinkedIn
-      %li
-        %a{href: "https://twitter.com/grahamjenson"}
-          %i.fa.fa-twitter
-          .tooltip Twitter
-      %li
-        %a{href: "https://github.com/grahamjenson"}
-          %i.fa.fa-github
-          .tooltip Github
-      %li
-        %a{href: 'https://plus.google.com/105952473745800614264'}
-          %i.fa.fa-google-plus-square 
-          .tooltip Google+
-      %li
-        %a{href: blog_url(:format => :rss)}
-          %i.fa.fa-rss
-          .tooltip RSS
+      = render :partial => 'layouts/follow_block'
 
     %ul.topnav
       - tab = yield(:tab)

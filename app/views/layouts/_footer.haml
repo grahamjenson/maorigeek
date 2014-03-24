@@ -12,22 +12,9 @@
           %p If you want to talk about the development of your product?
           %a{href: contact_path} Contact Us
         .column-one-fourth
-        .column-one-fourth
-        .column-one-fourth
           %h3 Follow Us
           %ul.footer-social
-            %li
-              %a{href: "http://www.linkedin.com/pub/graham-jenson/6/a93/b07"}
-                %i.fa.fa-linkedin-square
-                .tooltip LinkedIn
-            %li
-              %a{href: "https://twitter.com/grahamjenson"}
-                %i.fa.fa-twitter
-                .tooltip Twitter
-            %li
-              %a{href: "https://github.com/grahamjenson"}
-                %i.fa.fa-github
-                .tooltip Github
+            = render :partial => 'layouts/follow_block'
                 
       .footer-lower-container
         %ul.footer-lower

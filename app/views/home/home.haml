@@ -84,16 +84,6 @@
     .content-column
       %h3 Agile Development
       %p On-site, flexible and robust products
-.divider
-%h3.section-title Latest Work
-#portfolio-nav.carousel-nav
-  .back
-  .next
-.carousel
-  %ul#portfolio-carousel.slider-container
-    - for gist in @recent_gists
-      %li.column-one-fourth.portfolio-item.branding
-        = render partial: 'portfolio_item_stub', :locals => {:gist => gist}
 .column-container
   .column-three-qtr
     .divider
