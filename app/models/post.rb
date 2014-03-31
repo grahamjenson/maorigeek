@@ -61,7 +61,7 @@ class Post < ActiveRecord::Base
   end
 
   def generate_slug
-    self.slug = self.title.dup.slugorize!
+    self.slug = self.title.dup.slugorize! if !self.published?
   end
 
   def create_uuid
