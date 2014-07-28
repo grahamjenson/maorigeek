@@ -8,6 +8,7 @@ gem 'thin'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'newrelic_rpm'
 
 gem 'haml-rails'
 gem 'haml_coffee_assets'
