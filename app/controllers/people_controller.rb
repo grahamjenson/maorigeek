@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
       p = Person.new
       p.email = params[:email]
       if p.save
-        flash[:notice] = 'Thankyou for subscribing, an email to confirm your address will be sent to you soon'
+        flash[:notice] = 'Thank you for subscribing, an email to confirm your address will be sent to you soon'
       else
         flash[:error] = "Something went wrong: #{p.errors.fulll_messages}"
       end

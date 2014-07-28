@@ -1,18 +1,25 @@
-.sidebar-widget.search
-  / Title
-  %h3 Blog Subscription
+.sidebar-widget.search 
+  .author{style: 'text-align: center;'}
+    %img.img-circle{src: asset_path('graham.jpg'), style: 'width:118px; height:118px; border-radius:50%; border: 1px solid rgba(54, 165, 130 0.4);'}
+    
+    %br
+    By 
+    %strong
+      Graham Jenson
 
+    %ul.side-bar.follow-block
+      = render :partial => 'layouts/follow_block'
+
+  %br
+  
   = form_tag(people_path, method: "post", class: 'navbar-form navbar-left') do
     .container
       %input#blog-search{type: "text", placeholder: 'Email Subscription' , name: 'email'}
       %input#go.go{type: "submit", value: "\uf003"}
 
-  %ul.side-bar.follow-block
-    = render :partial => 'layouts/follow_block'
-
   %br
   %hr
-
+  
 .sidebar-widget.posts
   / Title
   - post_list = @popular_posts || @related_posts

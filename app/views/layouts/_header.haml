@@ -11,16 +11,9 @@
     %ul.topnav
       - tab = yield(:tab)
       %li
-        %a{href: root_path, class: (tab == 'home' ? 'current' : '')} Home
-      %li
-        %a{href: about_path, class: (tab == 'about' ? 'current' : '')} About Us
-      %li
-        %a{href: portfolio_path, class: (tab == 'portfolio' ? 'current' : '')} Portfolio
-      %li
         %a{href: blog_path, class: (tab == 'blog' ? 'current' : '')} Blog
       %li
-        %a{href: contact_path, class: (tab == 'contact' ? 'current' : '')} Contact Us
-
+        %a{href: portfolio_path, class: (tab == 'portfolio' ? 'current' : '')} Portfolio
     %a.mobilenav-click{href: "#"}
       .mobilenav-button-container
         .mobilenav-button-inner

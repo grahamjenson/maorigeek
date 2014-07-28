@@ -1,19 +1,21 @@
 .blog-post.post{itemscope: '', itemtype: "http://schema.org/Article", 'data-markdown' => post.markdown , :class => (preview ? '' : 'actual-post' )}
   %h1
     %span{itemprop: "name"}
-      %a{href: post_path(post.slug)}= post.title
+      - if preview
+        %a{href: post_path(post.slug)}= post.title
+      - else
+        = post.title
 
   .blog-meta
     .meta-item
       .meta-title.published Date:
-      %a{href: "#"}
-        %span{itemprop: "datePublished", content: post.published_at.to_date.iso8601}
-          = post.pretty_published_at_date
+      %span{itemprop: "datePublished", content: post.published_at.to_date.iso8601}
+        = post.pretty_published_at_date
 
     .meta-item
       .meta-title.tags Tags:
       - post.tags.each do |tag|
-        %a{href: "#"}= tag.name
+        = tag.name
     - name = post.user.try(:name)
     - if name
       .meta-item
