@@ -12,6 +12,11 @@ class HomeController < ApplicationController
     @posts = Post.recent
     @popular_posts = @posts
     @latest_project = Gist.last
+    respond_to do |f|
+      f.html {}
+      f.rss { render layout: false}
+      f.atom { render layout: false}
+    end
   end
 
   def post
