@@ -1,4 +1,18 @@
 - content_for(:title, @post.title)
+
+.column-container{style: 'padding: 0 0 15px 10px;'}
+  .column-three-qtr
+    %span{style: 'float: left;'}
+      %a{href: 'http://www.hapiger.com', target: "_blank"}
+        %img.logo{:src => "https://github.com/grahamjenson/hapiger/raw/master/assets/hapiger70x70.png"}/
+    %div{style: 'padding: 25px 0 5px 0px;'}
+      Check out my new project:
+    %div 
+      %a{href: 'http://www.hapiger.com', target: "_blank"}
+        %span{style: "font-style:italic"} OpenSource, Scalable, Easy 
+        %strong HapiGER Recommender System 
+        
+
 .column-container
   .column-three-qtr
     = render :partial => 'post', locals: {post: @post, :preview => false}
