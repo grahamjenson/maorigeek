@@ -1,5 +1,5 @@
 class GhostPostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :markdown, :status, :published_at, :thumbnail
+  attributes :id, :title, :markdown, :status, :published_at, :thumbnail, :slug
 
   def status
     object.state
